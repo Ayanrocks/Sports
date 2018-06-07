@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700|Lato:300,400,700');
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+h2 {
+    font-family: 'Josefin Sans';
+    font-size: 3.2rem;
+}
+
+header{
+    height: 100vh;
+    position: relative;
+    background-image: url('./assets/images/Football\ homepage.png');
+}

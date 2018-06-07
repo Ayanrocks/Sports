@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700|Lato:300,400,700");
+@keyframes arrowMove {
+  0% {
+    opacity: 0;
+    transform: translateX(-11rem); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  70% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+h2 {
+  font-family: 'Josefin Sans';
+  font-size: 3.2rem; }
+
+header {
+  height: 100vh;
+  position: relative;
+  background-image: url("./assets/images/Football homepage.png"); }
+
+.icon-white {
+  color: #fff; }
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 10rem;
+  padding: 4rem 1rem;
+  height: 100%;
+  background-color: #261447; }
+  nav logo {
+    transform: translateZ(-90deg); }
+
+.home-title__heading {
+  position: absolute;
+  top: 53.5%;
+  left: 20%;
+  transform: translateX(-30%);
+  margin-bottom: 1rem;
+  color: #fff; }
+
+.home-title__button {
+  background-color: #da2c38;
+  color: #fff;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 5rem;
+  padding: 1rem 4.5rem 1rem 2rem;
+  position: absolute;
+  top: 63%;
+  left: 10%;
+  font-size: 1.4rem; }
+  .home-title__button .material-icons {
+    position: absolute;
+    top: 23%;
+    left: 75%; }
+  .home-title__button:hover .material-icons {
+    animation-name: arrowMove;
+    animation-duration: .5s;
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
+  .home-title__button:hover .button__text {
+    animation: fadeIn 0.5s cubic-bezier(0.645, 0.045, 0.355, 1); }

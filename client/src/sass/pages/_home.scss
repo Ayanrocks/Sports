@@ -1,0 +1,38 @@
+.home-title {
+    &__heading {
+        position: absolute;
+        top: 53.5%;
+        left: 20%;
+        transform: translateX(-30%);
+        margin-bottom: 1rem;
+        color: #fff;
+    }
+    &__button {
+        background-color: #da2c38;
+        color: #fff;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 5rem;
+        padding: 1rem 4.5rem 1rem 2rem;
+        position: absolute;
+        top: 63%;
+        left: 10%;
+        font-size: 1.4rem;
+        & .material-icons {
+            position: absolute;
+            top: 23%;
+            left: 75%;
+        }
+        &:hover {
+            .material-icons {
+                animation-name: arrowMove;
+                animation-duration: .5s;
+                animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+            }
+
+            .button__text {
+                animation: fadeIn .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+            }
+        }
+    }
+}
