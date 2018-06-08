@@ -17,11 +17,13 @@
         position: absolute;
         top: 63%;
         left: 10%;
+        font-weight: bold;
         font-size: 1.4rem;
         & .material-icons {
             position: absolute;
-            top: 23%;
+            top: 30%;
             left: 75%;
+            font-size: 1.5rem;
         }
         &:hover {
             .material-icons {
@@ -29,10 +31,49 @@
                 animation-duration: .5s;
                 animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
             }
-
             .button__text {
                 animation: fadeIn .5s cubic-bezier(0.645, 0.045, 0.355, 1);
             }
         }
+    }
+}
+
+.auth-buttons {
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    & .login {
+        border: none;
+        margin-right: 4rem;
+        font-size: 1.9rem;
+        background-color: transparent;
+        padding: 1rem;
+        &::after {
+            content: '';
+            background-color: #000;
+            height: 2px;
+            width: 7.2rem;
+            position: absolute;
+            bottom: 1px;
+            left: 5px;
+            opacity: 0;
+        }
+        &:hover {
+            &::after {
+                animation: lineMove .5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+            }
+        }
+    }
+    & .signup {
+        border: none;
+        background-color: #87c38f;
+        font-size: 1.9rem;
+        border: 1px solid transparent;
+        border-radius: 50px;
+        padding: 1rem;
+        color: #fff;
     }
 }

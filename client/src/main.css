@@ -15,6 +15,17 @@
   100% {
     opacity: 1; } }
 
+@keyframes lineMove {
+  0% {
+    opacity: 0;
+    width: 0; }
+  70% {
+    opacity: 1;
+    width: 100%; }
+  100% {
+    opacity: 0;
+    transform: translateX(5rem); } }
+
 *, *::after, *::before {
   margin: 0;
   padding: 0;
@@ -33,7 +44,12 @@ h2 {
 header {
   height: 100vh;
   position: relative;
-  background-image: url("./assets/images/Football homepage.png"); }
+  background-image: url("./assets/images/Football homepage.png");
+  background-size: cover;
+  background-position: top; }
+
+a, a:link, a:visited {
+  text-decoration: none; }
 
 .icon-white {
   color: #fff; }
@@ -46,8 +62,16 @@ nav {
   padding: 4rem 1rem;
   height: 100%;
   background-color: #261447; }
-  nav logo {
-    transform: translateZ(-90deg); }
+  nav .logo {
+    margin: 0 auto;
+    transform: rotateZ(-90deg); }
+    nav .logo img {
+      height: 100%;
+      width: 100%; }
+  nav .arrow {
+    margin: 0 auto; }
+  nav .social {
+    margin: 0 auto; }
 
 .home-title__heading {
   position: absolute;
@@ -67,14 +91,49 @@ nav {
   position: absolute;
   top: 63%;
   left: 10%;
+  font-weight: bold;
   font-size: 1.4rem; }
   .home-title__button .material-icons {
     position: absolute;
-    top: 23%;
-    left: 75%; }
+    top: 30%;
+    left: 75%;
+    font-size: 1.5rem; }
   .home-title__button:hover .material-icons {
     animation-name: arrowMove;
     animation-duration: .5s;
     animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
   .home-title__button:hover .button__text {
     animation: fadeIn 0.5s cubic-bezier(0.645, 0.045, 0.355, 1); }
+
+.auth-buttons {
+  position: absolute;
+  top: 5%;
+  right: 3%;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden; }
+  .auth-buttons .login {
+    border: none;
+    margin-right: 4rem;
+    font-size: 1.9rem;
+    background-color: transparent;
+    padding: 1rem; }
+    .auth-buttons .login::after {
+      content: '';
+      background-color: #000;
+      height: 2px;
+      width: 7.2rem;
+      position: absolute;
+      bottom: 1px;
+      left: 5px;
+      opacity: 0; }
+    .auth-buttons .login:hover::after {
+      animation: lineMove 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53); }
+  .auth-buttons .signup {
+    border: none;
+    background-color: #87c38f;
+    font-size: 1.9rem;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    padding: 1rem;
+    color: #fff; }

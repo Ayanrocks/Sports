@@ -23,4 +23,10 @@ header{
     height: 100vh;
     position: relative;
     background-image: url('./assets/images/Football\ homepage.png');
+    background-size: cover;
+    background-position: top;
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
 }
