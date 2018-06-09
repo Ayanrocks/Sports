@@ -1,79 +1,122 @@
 .home-title {
-    &__heading {
-        position: absolute;
-        top: 53.5%;
-        left: 20%;
-        transform: translateX(-30%);
-        margin-bottom: 1rem;
-        color: #fff;
+  &__heading {
+    position: absolute;
+    top: 53.5%;
+    left: 20%;
+    transform: translateX(-30%);
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  &__button {
+    background-color: #da2c38;
+    color: #fff;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 5rem;
+    padding: 1rem 4.5rem 1rem 2rem;
+    position: absolute;
+    top: 63%;
+    left: 10%;
+    font-weight: bold;
+    font-size: 1.4rem;
+    & .material-icons {
+      position: absolute;
+      top: 30%;
+      left: 75%;
+      font-size: 1.5rem;
     }
-    &__button {
-        background-color: #da2c38;
-        color: #fff;
-        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
-        border: none;
-        border-radius: 5rem;
-        padding: 1rem 4.5rem 1rem 2rem;
-        position: absolute;
-        top: 63%;
-        left: 10%;
-        font-weight: bold;
-        font-size: 1.4rem;
-        & .material-icons {
-            position: absolute;
-            top: 30%;
-            left: 75%;
-            font-size: 1.5rem;
-        }
-        &:hover {
-            .material-icons {
-                animation-name: arrowMove;
-                animation-duration: .5s;
-                animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-            }
-            .button__text {
-                animation: fadeIn .5s cubic-bezier(0.645, 0.045, 0.355, 1);
-            }
-        }
+    &:hover {
+      .material-icons {
+        animation-name: arrowMove;
+        animation-duration: 0.5s;
+        animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      .button__text {
+        animation: fadeIn 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
     }
+  }
 }
 
 .auth-buttons {
-    position: absolute;
-    top: 5%;
-    right: 3%;
-    display: flex;
-    justify-content: space-between;
+  position: absolute;
+  top: 5%;
+  right: 3%;
+  display: flex;
+  justify-content: space-between;
+  & .login-div {
+    margin-right: 4rem;
+    position: relative;
     overflow: hidden;
+    padding: 1rem;
+    backface-visibility: hidden;
     & .login {
-        border: none;
-        margin-right: 4rem;
-        font-size: 1.9rem;
-        background-color: transparent;
-        padding: 1rem;
-        &::after {
-            content: '';
-            background-color: #000;
-            height: 2px;
-            width: 7.2rem;
-            position: absolute;
-            bottom: 1px;
-            left: 5px;
-            opacity: 0;
-        }
-        &:hover {
-            &::after {
-                animation: lineMove .5s cubic-bezier(0.55, 0.085, 0.68, 0.53);
-            }
-        }
+      border: none;
+      font-size: 1.9rem;
+      background-color: transparent;
     }
+    & .dash {
+      background-color: #000;
+      height: 2px;
+      position: absolute;
+      bottom: 7px;
+      left: 5px;
+      opacity: 1;
+      backface-visibility: hidden;
+    }
+    &:hover {
+      & .dash {
+        @include lineMove(lineMove, 8rem) {
+          animation: lineMove 0.5s ease-in-out;
+        }
+      }
+    }
+  }
+  & .signup-div {
+    position: relative;
+    backface-visibility: hidden;
+    padding: 1rem;
+    background-color: #87c38f;
+    border: 1px solid #87c38f;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
     & .signup {
-        border: none;
-        background-color: #87c38f;
-        font-size: 1.9rem;
-        border: 1px solid transparent;
-        border-radius: 50px;
-        padding: 1rem;
+      border: none;
+      font-size: 1.9rem;
+      padding: 1rem;
+      color: #fff;
+      z-index: 1;
+
+      &:hover {
+        &::before,
+        &::after {
+          height: 100%;
+        }
         color: #fff;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        width: 100%;
+        height: 0;
+        border-radius: 5rem;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+
+      &::before {
+        background-color: rgba(255, 196, 0, 0.883);
+        transition: all 0.4s ease;
+      }
+      &::after {
+        background-color: #f33;
+        transition: all 0.6s ease;
+      }
     }
+  }
 }

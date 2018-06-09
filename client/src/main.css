@@ -15,17 +15,6 @@
   100% {
     opacity: 1; } }
 
-@keyframes lineMove {
-  0% {
-    opacity: 0;
-    width: 0; }
-  70% {
-    opacity: 1;
-    width: 100%; }
-  100% {
-    opacity: 0;
-    transform: translateX(5rem); } }
-
 *, *::after, *::before {
   margin: 0;
   padding: 0;
@@ -100,7 +89,7 @@ nav {
     font-size: 1.5rem; }
   .home-title__button:hover .material-icons {
     animation-name: arrowMove;
-    animation-duration: .5s;
+    animation-duration: 0.5s;
     animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); }
   .home-title__button:hover .button__text {
     animation: fadeIn 0.5s cubic-bezier(0.645, 0.045, 0.355, 1); }
@@ -110,30 +99,70 @@ nav {
   top: 5%;
   right: 3%;
   display: flex;
-  justify-content: space-between;
-  overflow: hidden; }
-  .auth-buttons .login {
-    border: none;
+  justify-content: space-between; }
+  .auth-buttons .login-div {
     margin-right: 4rem;
-    font-size: 1.9rem;
-    background-color: transparent;
-    padding: 1rem; }
-    .auth-buttons .login::after {
-      content: '';
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
+    backface-visibility: hidden; }
+    .auth-buttons .login-div .login {
+      border: none;
+      font-size: 1.9rem;
+      background-color: transparent; }
+    .auth-buttons .login-div .dash {
       background-color: #000;
       height: 2px;
-      width: 7.2rem;
       position: absolute;
-      bottom: 1px;
+      bottom: 7px;
       left: 5px;
-      opacity: 0; }
-    .auth-buttons .login:hover::after {
-      animation: lineMove 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53); }
-  .auth-buttons .signup {
-    border: none;
-    background-color: #87c38f;
-    font-size: 1.9rem;
-    border: 1px solid transparent;
-    border-radius: 50px;
+      opacity: 1;
+      backface-visibility: hidden; }
+    .auth-buttons .login-div:hover .dash {
+      animation: lineMove 0.5s ease-in-out; }
+
+@keyframes lineMove {
+  0% {
+    width: 0; }
+  50% {
+    opacity: 1;
+    width: 8rem; }
+  99% {
+    transform: translateX(8rem); }
+  100% {
+    opacity: 0; } }
+  .auth-buttons .signup-div {
+    position: relative;
+    backface-visibility: hidden;
     padding: 1rem;
-    color: #fff; }
+    background-color: #87c38f;
+    border: 1px solid #87c38f;
+    border-radius: 50px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1; }
+    .auth-buttons .signup-div .signup {
+      border: none;
+      font-size: 1.9rem;
+      padding: 1rem;
+      color: #fff;
+      z-index: 1; }
+      .auth-buttons .signup-div .signup:hover {
+        color: #fff; }
+        .auth-buttons .signup-div .signup:hover::before, .auth-buttons .signup-div .signup:hover::after {
+          height: 100%; }
+      .auth-buttons .signup-div .signup::before, .auth-buttons .signup-div .signup::after {
+        content: "";
+        width: 100%;
+        height: 0;
+        border-radius: 5rem;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1; }
+      .auth-buttons .signup-div .signup::before {
+        background-color: rgba(255, 196, 0, 0.883);
+        transition: all 0.4s ease; }
+      .auth-buttons .signup-div .signup::after {
+        background-color: #f33;
+        transition: all 0.6s ease; }
