@@ -1,0 +1,32 @@
+.auth {
+    &-cover{
+        background-color: #ff3333;
+        clip-path: polygon(0 0, 60% 0%, 45% 100%, 0% 100%);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    &__signup {
+        border: none;
+        font-size: 6.5rem;
+        color: #eee;
+        position: absolute;
+        top: 40%;
+        left: 20%;
+        background-color: transparent;
+        letter-spacing: 1rem;
+    }
+    &__login {
+        border: none;
+        font-size: 6.5rem;
+        color: #111;
+        position: absolute;
+        top: 41.05%;
+        right: 20%;
+        background-color: transparent;
+        letter-spacing: 1rem;
+    }
+}

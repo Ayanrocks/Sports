@@ -15,7 +15,9 @@
   100% {
     opacity: 1; } }
 
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
@@ -33,12 +35,20 @@ h2 {
 header {
   height: 100vh;
   position: relative;
+  font-family: 'Josefin Sans';
   background-image: url("./assets/images/Football homepage.png");
   background-size: cover;
   background-position: top; }
 
-a, a:link, a:visited {
+a,
+a:link,
+a:visited {
   text-decoration: none; }
+
+.auth {
+  height: 100vh;
+  position: relative;
+  font-family: 'Josefin Sans'; }
 
 .icon-white {
   color: #fff; }
@@ -50,7 +60,8 @@ nav {
   width: 10rem;
   padding: 4rem 1rem;
   height: 100%;
-  background-color: #261447; }
+  background-color: #261447;
+  z-index: 999; }
   nav .logo {
     margin: 0 auto;
     transform: rotateZ(-90deg); }
@@ -61,6 +72,44 @@ nav {
     margin: 0 auto; }
   nav .social {
     margin: 0 auto; }
+
+.google {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  display: flex;
+  align-items: baseline;
+  padding: 3rem;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #eee;
+  z-index: 1; }
+  .google i {
+    border: 3px solid #fff;
+    padding: 1rem;
+    border-radius: 50px;
+    margin-right: 5rem;
+    font-size: 2.4rem; }
+  .google h2 {
+    font-size: 2.5rem; }
+  .google::before, .google::after {
+    content: "";
+    width: 100%;
+    height: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1; }
+  .google::before {
+    background-color: rgba(224, 224, 224, 0.883);
+    transition: all 0.4s ease; }
+  .google::after {
+    background-color: #f33;
+    transition: all 0.6s ease; }
+  .google:hover {
+    color: #fff; }
+    .google:hover::before, .google:hover::after {
+      height: 100%; }
 
 .home-title__heading {
   position: absolute;
@@ -166,3 +215,33 @@ nav {
       .auth-buttons .signup-div .signup::after {
         background-color: #f33;
         transition: all 0.6s ease; }
+
+.auth-cover {
+  background-color: #ff3333;
+  clip-path: polygon(0 0, 60% 0%, 45% 100%, 0% 100%);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; }
+
+.auth__signup {
+  border: none;
+  font-size: 6.5rem;
+  color: #eee;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  background-color: transparent;
+  letter-spacing: 1rem; }
+
+.auth__login {
+  border: none;
+  font-size: 6.5rem;
+  color: #111;
+  position: absolute;
+  top: 41.05%;
+  right: 20%;
+  background-color: transparent;
+  letter-spacing: 1rem; }
