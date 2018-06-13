@@ -8,10 +8,15 @@ const Navbar = () => (
       <img src={Logo} alt="logo" title="Sports By Orilliance" />
     </Link>
     <div className="arrow">
-      <i className="fas fa-angle-right fa-3x icon-white" />
+      <i className="fas fa-angle-right fa-3x icon-white arrow-up" />
+      <i className="fas fa-angle-right fa-3x icon-white arrow-dn" />
     </div>
     <Link to="/privacy-policy" className="social">
-      <i className="fas fa-file-alt fa-2x icon-white" />
+    <div className="arrow">
+        <i className="fas fa-file-alt fa-2x icon-white arrow-up" />
+        <i className="fas fa-file-alt fa-2x icon-white arrow-dn" />
+
+    </div>
     </Link>
   </nav>
 );

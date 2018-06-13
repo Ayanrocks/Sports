@@ -69,30 +69,47 @@ nav {
       height: 100%;
       width: 100%; }
   nav .arrow {
-    margin: 0 auto; }
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    height: 2.1rem;
+    width: 4rem; }
+    nav .arrow i {
+      transition: all 0.6s ease; }
+    nav .arrow .arrow-up {
+      position: absolute;
+      top: -5px;
+      right: 50%;
+      transform: translateX(50%); }
+    nav .arrow .arrow-dn {
+      position: absolute;
+      bottom: -46.5px;
+      right: 50%;
+      transform: translateX(50%); }
+    nav .arrow:hover i {
+      transform: translateX(50%) translateY(-110%); }
   nav .social {
     margin: 0 auto; }
 
-.google {
+.google-signup {
   position: absolute;
   top: 50%;
   left: 20%;
   display: flex;
   align-items: baseline;
-  padding: 3rem;
+  padding: 1rem;
+  width: 40rem;
   color: #fff;
   background-color: transparent;
   border: 2px solid #eee;
   z-index: 1; }
-  .google i {
-    border: 3px solid #fff;
-    padding: 1rem;
-    border-radius: 50px;
+  .google-signup i {
+    padding: .9rem;
     margin-right: 5rem;
     font-size: 2.4rem; }
-  .google h2 {
+  .google-signup h2 {
     font-size: 2.5rem; }
-  .google::before, .google::after {
+  .google-signup::before, .google-signup::after {
     content: "";
     width: 100%;
     height: 0;
@@ -100,15 +117,126 @@ nav {
     left: 0;
     bottom: 0;
     z-index: -1; }
-  .google::before {
+  .google-signup::before {
     background-color: rgba(224, 224, 224, 0.883);
     transition: all 0.4s ease; }
-  .google::after {
+  .google-signup::after {
     background-color: #f33;
     transition: all 0.6s ease; }
-  .google:hover {
+  .google-signup:hover {
     color: #fff; }
-    .google:hover::before, .google:hover::after {
+    .google-signup:hover::before, .google-signup:hover::after {
+      height: 100%; }
+
+.google-login {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  display: flex;
+  align-items: baseline;
+  padding: 1rem;
+  width: 40rem;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #eee;
+  z-index: 1; }
+  .google-login i {
+    padding: .9rem;
+    margin-right: 5rem;
+    font-size: 2.4rem; }
+  .google-login h2 {
+    font-size: 2.5rem; }
+  .google-login::before, .google-login::after {
+    content: "";
+    width: 100%;
+    height: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1; }
+  .google-login::before {
+    background-color: rgba(224, 224, 224, 0.883);
+    transition: all 0.4s ease; }
+  .google-login::after {
+    background-color: #f33;
+    transition: all 0.6s ease; }
+  .google-login:hover {
+    color: #fff; }
+    .google-login:hover::before, .google-login:hover::after {
+      height: 100%; }
+
+.facebook-signup {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  display: flex;
+  align-items: baseline;
+  padding: 1rem;
+  width: 40rem;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #eee;
+  z-index: 1; }
+  .facebook-signup i {
+    padding: .9rem;
+    margin-right: 5rem;
+    font-size: 2.4rem; }
+  .facebook-signup h2 {
+    font-size: 2.5rem; }
+  .facebook-signup::before, .facebook-signup::after {
+    content: "";
+    width: 100%;
+    height: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1; }
+  .facebook-signup::before {
+    background-color: rgba(224, 224, 224, 0.883);
+    transition: all 0.4s ease; }
+  .facebook-signup::after {
+    background-color: #f33;
+    transition: all 0.6s ease; }
+  .facebook-signup:hover {
+    color: #fff; }
+    .facebook-signup:hover::before, .facebook-signup:hover::after {
+      height: 100%; }
+
+.facebook-login {
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  display: flex;
+  align-items: baseline;
+  padding: 1rem;
+  width: 40rem;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #eee;
+  z-index: 1; }
+  .facebook-login i {
+    padding: .9rem;
+    margin-right: 5rem;
+    font-size: 2.4rem; }
+  .facebook-login h2 {
+    font-size: 2.5rem; }
+  .facebook-login::before, .facebook-login::after {
+    content: "";
+    width: 100%;
+    height: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1; }
+  .facebook-login::before {
+    background-color: rgba(224, 224, 224, 0.883);
+    transition: all 0.4s ease; }
+  .facebook-login::after {
+    background-color: #f33;
+    transition: all 0.6s ease; }
+  .facebook-login:hover {
+    color: #fff; }
+    .facebook-login:hover::before, .facebook-login:hover::after {
       height: 100%; }
 
 .home-title__heading {
@@ -224,7 +352,8 @@ nav {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1; }
+  z-index: -1;
+  transition: all .8s ease-in; }
 
 .auth__signup {
   border: none;

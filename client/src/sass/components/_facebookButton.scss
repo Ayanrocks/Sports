@@ -1,0 +1,7 @@
+.facebook-signup {
+    @include socialBtn(30%, 20%);
+}
+
+.facebook-login {
+    @include socialBtn(30%, 60%);
+}

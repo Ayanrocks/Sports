@@ -1,9 +1,9 @@
 import React from 'react'
 
 const GoogleButton = props => (
-  <button className="google">
+  <button className={props.show ? props.className : "hide"}>
     <i className="fab fa-google" />
-    <h2>Sign Up with Google</h2>
+    <h2>{props.text}</h2>
   </button>
 );
 

@@ -1,47 +1,7 @@
-.google {
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    display: flex;
-    align-items: baseline;
-    padding: 3rem;
-    color: #fff;
-    background-color: transparent;
-    border: 2px solid #eee;
-    z-index: 1;
-    & i {
-        border: 3px solid #fff;
-        padding: 1rem;
-        border-radius: 50px;
-        margin-right: 5rem;
-        font-size: 2.4rem;
-    }
-    & h2 {
-        font-size: 2.5rem;
-    }
-    &::before,
-    &::after {
-        content: "";
-        width: 100%;
-        height: 0;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        z-index: -1;
-    }
-    &::before {
-        background-color: rgba(224, 224, 224, 0.883);
-        transition: all 0.4s ease;
-    }
-    &::after {
-        background-color: #f33;
-        transition: all 0.6s ease;
-    }
-    &:hover {
-        &::before,
-        &::after {
-            height: 100%;
-        }
-        color: #fff;
-    }
+.google-signup {
+@include socialBtn(50%, 20%);
+}
+
+.google-login {
+    @include socialBtn(50%, 60%);
 }
