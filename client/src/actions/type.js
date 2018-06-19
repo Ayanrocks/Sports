@@ -1,0 +1,2 @@
+export const SHOW_AUTH_LOGIN = 'SHOW_AUTH_LOGIN';
+export const SHOW_AUTH_SIGNUP = 'SHOW_AUTH_SIGNUP';

@@ -13,6 +13,7 @@ html {
 
 body {
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 h2 {
@@ -39,4 +40,18 @@ a:visited {
     height: 100vh;
     position: relative;
     font-family: 'Josefin Sans';
+}
+
+//for Auth Section
+
+.active {
+    opacity: 1;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.black-text {
+    color: #111 !important;
 }

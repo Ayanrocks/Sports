@@ -1,5 +1,5 @@
 .auth {
-    &-cover{
+    &-cover {
         background-color: #ff3333;
         clip-path: polygon(0 0, 60% 0%, 45% 100%, 0% 100%);
         height: 100%;
@@ -8,7 +8,7 @@
         top: 0;
         left: 0;
         z-index: -1;
-        transition: all .8s ease-in; 
+        transition: all .6s cubic-bezier(0.86, 0, 0.07, 1);
     }
     &__signup {
         border: none;
@@ -19,15 +19,21 @@
         left: 20%;
         background-color: transparent;
         letter-spacing: 1rem;
+        transition: all .5s cubic-bezier(1, 0, 0, 1);
     }
     &__login {
         border: none;
         font-size: 6.5rem;
         color: #111;
         position: absolute;
-        top: 41.05%;
+        top: 40%;
         right: 20%;
         background-color: transparent;
         letter-spacing: 1rem;
+        transition: all .5s cubic-bezier(1, 0, 0, 1);
     }
+}
+
+.login-active {
+    transform: translateX(60%) scaleX(1.2);
 }

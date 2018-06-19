@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const GoogleButton = props => (
-  <button className={props.show ? props.className : "hide"}>
+  <button className={props.className}>
     <i className="fab fa-google" />
     <h2>{props.text}</h2>
   </button>
