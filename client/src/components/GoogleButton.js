@@ -1,10 +1,10 @@
 import React from "react";
 
 const GoogleButton = props => (
-  <button className={props.className}>
+  <a href="/auth/google" className={props.className}>
     <i className="fab fa-google" />
     <h2>{props.text}</h2>
-  </button>
+  </a>
 );
 
 export default GoogleButton;

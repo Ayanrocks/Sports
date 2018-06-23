@@ -7,13 +7,14 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --watch",
-    "serve": "nodemon app.js"
+    "serve": "concurrently \"nodemon app.js\" \"npm start --prefix client\" \" npm run watch-css --prefix client \""
   },
   "engine": {
     "node": "9.11.1",
     "npm": "5.7.0"
   },
   "dependencies": {
+    "concurrently": "^3.6.0",
     "cookie-session": "^2.0.0-beta.3",
     "create-react-app": "^1.5.2",
     "ejs": "^2.6.1",
@@ -22,6 +23,7 @@
     "mongoose": "^5.1.1",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
-    "passport-google-oauth20": "^1.0.0"
+    "passport-google-oauth20": "^1.0.0",
+    "request": "^2.87.0"
   }
 }

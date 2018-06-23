@@ -1,2 +1,2 @@
-export const SHOW_AUTH_LOGIN = 'SHOW_AUTH_LOGIN';
-export const SHOW_AUTH_SIGNUP = 'SHOW_AUTH_SIGNUP';
+export const GET_LEAGUE_DATA = "GET_LEAGUE_DATA";
+export const GET_FIXTURE_DATA = "GET_FIXTURE_DATA";

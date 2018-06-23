@@ -46,12 +46,22 @@ a:visited {
 
 .active {
     opacity: 1;
+    visibility: visible;
 }
 
 .hide {
     opacity: 0;
+    visibility: hidden;
 }
 
 .black-text {
     color: #111 !important;
+}
+
+//------------xx------------------
+
+.dashboard {
+    height: 100vh;
+    position: relative;
+    font-family: 'Lato';
 }

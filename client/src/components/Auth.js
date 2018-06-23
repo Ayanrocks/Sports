@@ -2,8 +2,6 @@ import React from "react";
 import Navbar from "./Navbar";
 import GoogleButton from "./GoogleButton";
 import FacebookButton from "./FacebookButton";
-import { connect } from "react-redux";
-import { signUpButton, loginAuthButton } from "../actions";
 
 class Auth extends React.Component {
   constructor(props) {
@@ -80,20 +78,4 @@ class Auth extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    show: state.show
-  };
-}
-
-function mapDispatchToProps() {
-  return {
-    loginAuthButton,
-    signUpButton
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Auth);
+export default Auth;

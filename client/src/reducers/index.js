@@ -1,6 +1,8 @@
 import { combineReducers } from "redux";
-import visibilityReducer from "./visibilityReducer";
+import getLeagueData from "./getLeagueData";
+import getFixtureData from "./getFixtureData";
 
-export default () => combineReducers({
-  visibility: visibilityReducer
+export default combineReducers({
+  league: getLeagueData,
+  fixture: getFixtureData
 });
