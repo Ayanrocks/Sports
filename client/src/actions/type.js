@@ -1,2 +1,3 @@
 export const GET_LEAGUE_DATA = "GET_LEAGUE_DATA";
 export const GET_FIXTURE_DATA = "GET_FIXTURE_DATA";
+export const GET_CURR_DATA = "GET_CURR_DATA";

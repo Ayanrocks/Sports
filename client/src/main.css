@@ -26,8 +26,7 @@ html {
   font-size: 62.5%; }
 
 body {
-  box-sizing: border-box;
-  overflow: hidden; }
+  box-sizing: border-box; }
 
 h2 {
   font-family: 'Josefin Sans';
@@ -115,7 +114,10 @@ nav {
   width: 10rem;
   padding: 4rem 0;
   height: 100%;
-  background-color: #261447; }
+  background-color: #261447;
+  position: fixed;
+  top: 0%;
+  left: 0%; }
   .auth-navbar .nav__link {
     display: flex;
     flex-direction: column;
@@ -281,28 +283,60 @@ nav {
       height: 100%; }
 
 .card {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 10rem auto;
+  width: 50%;
   padding: 5rem;
   width: 50%;
   background-color: #fff;
-  box-shadow: 0px 5px 7px #eee;
+  box-shadow: 0px 0 10px #eee;
   border-radius: 5px; }
   .card__heading {
     font-size: 2.5rem;
     text-align: center;
     letter-spacing: 4px;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin-bottom: 2rem; }
+  .card h5 {
+    color: #888; }
   .card__content {
     display: flex; }
-    .card__content__left {
-      flex-basis: 50%; }
-      .card__content__left__heading {
-        font-size: 2.3rem; }
-    .card__content__right {
-      flex-basis: 50%; }
+    .card__content .card__left {
+      margin: 2rem; }
+      .card__content .card__left__heading {
+        font-size: 2.4rem;
+        text-align: center; }
+      .card__content .card__left__img {
+        margin: 4rem 0;
+        padding: 0.5rem;
+        width: 30rem;
+        box-shadow: 0px 3px 5px #eee; }
+        .card__content .card__left__img img {
+          width: 100%; }
+    .card__content .card__middle {
+      width: calc(860px/3);
+      position: relative; }
+      .card__content .card__middle .vs {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2.1rem;
+        border-radius: 50rem;
+        box-shadow: 0px 0px 2px #eee;
+        color: #444;
+        padding: 2rem; }
+    .card__content .card__right {
+      margin: 2rem; }
+      .card__content .card__right__heading {
+        font-size: 2.4rem;
+        text-align: center; }
+      .card__content .card__right__img {
+        margin: 4rem 0;
+        padding: 0.5rem;
+        width: 30rem;
+        box-shadow: 0px 3px 5px #eee; }
+        .card__content .card__right__img img {
+          width: 100%; }
 
 .home-title__heading {
   position: absolute;

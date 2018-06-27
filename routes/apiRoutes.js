@@ -31,4 +31,18 @@ module.exports = app => {
       }
     );
   });
+  app.post("/api/getTeamData", (req, res) => {
+    request(
+      {
+        url: req.body.url,
+        headers: {
+          "X-Auth-Token": keys.footballAPIKey
+        }
+      },
+      (err, data) => {
+        var data = JSON.parse(data.body);
+        res.send(data);
+      }
+    );
+  });
 };
