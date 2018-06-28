@@ -5,7 +5,10 @@ const initialState = {};
 export default (state = initialState, action) => {
   switch (action.type) {
     case GET_CURR_DATA:
-      return action.payload;
+      return {
+        ...state,
+        current: action.payload
+      };
     default:
       return state;
   }

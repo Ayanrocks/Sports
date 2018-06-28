@@ -1,28 +1,73 @@
 import React from "react";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 import AuthNavbar from "./AuthNavbar";
 import MatchCard from "./MatchCard";
-// import _ from "lodash";
+import _ from "lodash";
+import { getLeagueData, getFixtureData, getCurrentData } from "../actions";
 
 class Dashboard extends React.Component {
+  componentDidMount() {
+    this.setState();
+    this.props.getLeagueData();
+
+    this.props.getFixtureData();
+
+    this.props.getCurrentData();
+
+    console.log(this.props);
+  }
+
+  renderContent() {
+    if (_.isEmpty(this.props.current.current)) {
+      if (this.props.league.league) {
+        return (
+          <MatchCard
+            match="Current Match"
+            title=" No current Match"
+            details={{}}
+            leagueCaption={this.props.league.league.leagueCaption}
+          />
+        );
+      }
+    } else {
+      return (
+        <MatchCard
+          match="Current Match"
+          details={this.props.current.current}
+          leagueCaption={this.props.league.league.leagueCaption}
+        />
+      );
+    }
+  }
+
   render() {
     return (
       <section className="dashboard">
         <AuthNavbar />
         <div className="dashboard__content">
-          <MatchCard match="Current Match" />
-          <MatchCard match="Upcoming Match" />
+          {/* To render Current matchCard */}
+          {this.renderContent()}
+
+          { this.props.league.league && <MatchCard
+            match="Upcoming Match"
+            details={this.props.fixture.fixture}
+            leagueCaption={this.props.league.league.leagueCaption}
+          />}
         </div>
       </section>
     );
   }
 }
 
-// function mapStateToProps({ league, fixture }) {
-//   return {
-//     league,
-//     fixture
-//   };
-// }
+function mapStateToProps({ league, fixture, current }) {
+  return {
+    league,
+    fixture,
+    current
+  };
+}
 
-export default Dashboard;
+export default connect(
+  mapStateToProps,
+  { getLeagueData, getFixtureData, getCurrentData }
+)(Dashboard);
