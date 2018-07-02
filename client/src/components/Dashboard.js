@@ -6,13 +6,12 @@ import _ from "lodash";
 import { getLeagueData, getFixtureData, getCurrentData } from "../actions";
 
 class Dashboard extends React.Component {
-  componentDidMount() {
-    this.setState();
-    this.props.getLeagueData();
+  async componentDidMount() {
+    await this.props.getLeagueData();
 
-    this.props.getFixtureData();
+    await this.props.getFixtureData();
 
-    this.props.getCurrentData();
+    await this.props.getCurrentData();
 
     console.log(this.props);
   }
@@ -21,7 +20,7 @@ class Dashboard extends React.Component {
     if (_.isEmpty(this.props.current.current)) {
       if (this.props.league.league) {
         return (
-          <MatchCard
+          <MatchCard 
             match="Current Match"
             title=" No current Match"
             details={{}}

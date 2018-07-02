@@ -19,6 +19,8 @@ function combineData(details, homeFlag, awayFlag) {
   return {
     homeTeamName: details.homeTeamName,
     awayTeamName: details.awayTeamName,
+    goalsAwayTeam: details.result.goalsAwayTeam,
+    goalsHomeTeam: details.result.goalsHomeTeam,
     homeFlag: homeFlag,
     awayFlag: awayFlag
   };
@@ -47,7 +49,7 @@ export const getLeagueData = () => async dispatch => {
 
 export const getFixtureData = () => async dispatch => {
   const res = await axios.get("/api/get_fixture_data");
-  // console.log(res.data);
+  console.log(res.data);
   const filteredData = filterArrayTimed(res.data);
   const finalData = await getData(filteredData);
   dispatch({ type: GET_FIXTURE_DATA, payload: finalData });

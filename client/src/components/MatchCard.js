@@ -3,11 +3,8 @@ import React from "react";
 import _ from "lodash";
 
 class Match extends React.Component {
-   componentWillMount(){
-  }
+  componentWillMount() {}
   renderContent() {
-  
-
     if (!_.isEmpty(this.props.details)) {
       return (
         <div className="card__content">
@@ -21,6 +18,7 @@ class Match extends React.Component {
                 alt={this.props.details.awayTeamName}
               />
             </div>
+            <div className="card__right__score">{this.props.goalsAwayTeam}</div>
           </div>
           <div className="card__middle">
             <div className="vs">
@@ -37,18 +35,19 @@ class Match extends React.Component {
                 alt={this.props.details.homeTeamName}
               />
             </div>
+            <div className="card__right__score">{this.props.goalsHomeTeam}</div>
           </div>
         </div>
       );
     } else {
-      return <h5 className="card__heading">{this.props.title}</h5>;
+      return <h3 className="card__heading">{this.props.title}</h3>;
     }
   }
   render() {
-    return (
+    return ( 
       <div className="card">
         <h4 className="card__heading">{this.props.leagueCaption}</h4>
-        <h5 className="card__heading">{this.props.match}</h5>
+        <h5 className="card__heading">{this.props.match} &mdash; </h5>
 
         {/* //to render Upcoming match Fixture */}
         {this.renderContent()}
@@ -57,6 +56,4 @@ class Match extends React.Component {
   }
 }
 
-
-
-export default (Match);
+export default Match;
