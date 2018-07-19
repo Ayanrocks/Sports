@@ -14,21 +14,23 @@
     flex-direction: column;
     height: calc(100% / 2);
     justify-content: space-around;
-    color: #fff;
     width: 100%;
     .nav-item {
-        font-size: 1.5rem;
-        text-align: center;
-        padding: 1.2rem;
-        border: none;
-        outline: none;
-        background-color: transparent;
-        transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+      font-family: 'Lato', sans-serif;
+      color: #fff;
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 1.2rem;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     }
   }
 }
 
-.active-tab {
+.active {
   border-left: 4px solid #ca1111 !important;
   background-color: #321b5e !important;
+  color: #fff;
 }

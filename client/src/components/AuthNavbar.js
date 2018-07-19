@@ -1,24 +1,22 @@
 import React from "react";
 import Logo from "../assets/svg/logo.svg";
-import { Link } from "react-router-dom";
-import createHistory from "history/createBrowserHistory";
-
-const history = createHistory();
+import { Link, Redirect, NavLink } from "react-router-dom";
 
 class AuthNavbar extends React.Component {
   constructor(props) {
     super(props);
 
     this.activeTab = this.activeTab.bind(this);
-
+    this.url = window.location.href.split("/").pop();
     this.state = {
-      active: "Dashboard"
+      active: this.url
     };
   }
 
   activeTab(e) {
     this.setState({ active: e.target.value });
-    history.push("/");
+    console.log(this.state);
+    // window.location.href =  "/" + e.target.value;
   }
 
   render() {
@@ -28,59 +26,69 @@ class AuthNavbar extends React.Component {
           <img src={Logo} alt="logo" title="Sports By Orilliance" />
         </Link>
         <div className="nav__link">
-          <button
-            onClick={this.activeTab}
-            value="Dashboard"
-            className={
-              this.state.active === "Dashboard"
-                ? "nav-item active-tab"
-                : "nav-item"
-            }
+          <NavLink
+            to="/dashboard"
+            // onClick={this.activeTab}
+            // value="dashboard"
+            className='nav-item'
+            // className={
+            //   this.state.active === "dashboard"
+            //     ? "nav-item active-tab"
+            //     : "nav-item"
+            // }
           >
             Dashboard
-          </button>
-          <Link to="/search"
-            onClick={this.activeTab}
-            value="Search"
-            className={
-              this.state.active === "Search"
-                ? "nav-item active-tab"
-                : "nav-item"
-            }
+          </NavLink>
+          <NavLink
+            to="/search"
+            // onClick={this.activeTab}
+            // value="search"
+            className='nav-item'
+            // className={
+            //   this.state.active === "search"
+            //     ? "nav-item active-tab"
+            //     : "nav-item"
+            // }
           >
             Search
-          </Link>
-          <button
-            onClick={this.activeTab}
-            value="My Teams"
-            className={
-              this.state.active === "My Teams"
-                ? "nav-item active-tab"
-                : "nav-item"
-            }
+          </NavLink>
+          <NavLink
+            to="/myteams"
+            // onClick={this.activeTab}
+            value="myteams"
+            // className={
+            //   this.state.active === "myteams"
+            //     ? "nav-item active-tab"
+            //     : "nav-item"
+            // }
+            className='nav-item'
           >
             My Teams
-          </button>
-          <button
-            onClick={this.activeTab}
-            value="News"
-            className={
-              this.state.active === "News" ? "nav-item active-tab" : "nav-item"
-            }
+          </NavLink>
+          <NavLink
+          to='/news'
+            // onClick={this.activeTab}
+            // value="news"
+            // className={
+            //   this.state.active === "news" ? "nav-item active-tab" : "nav-item"
+            // }
+            className='nav-item'
           >
             News
-          </button>
-          <button
-            onClick={this.activeTab}
-            value="Profile"
-            className={
-              this.state.active === "Profile"
-                ? "nav-item active-tab"
-                : "nav-item"
-            }
+          </NavLink>
+          <NavLink
+            to='/news'
+            // onClick={this.activeTab}
+            // value="profile"
+            // className={
+            //   this.state.active === "profile"
+            //     ? "nav-item active-tab"
+            //     : "nav-item"
+            // }
+          className='nav-item'
           >
             Profile
-          </button>
+          </NavLink>
         </div>
         <div className="logout">
           <div className="logout__btn" />

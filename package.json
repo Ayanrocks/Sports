@@ -10,7 +10,7 @@
     "serve": "concurrently \"nodemon app.js\" \"npm start --prefix client\" \" npm run watch-css --prefix client \""
   },
   "engine": {
-    "node": "9.11.1",
+    "node": "9.11.2",
     "npm": "5.7.0"
   },
   "dependencies": {
