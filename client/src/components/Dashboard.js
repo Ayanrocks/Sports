@@ -21,8 +21,8 @@ class Dashboard extends React.Component {
       if (this.props.league.league) {
         return (
           <MatchCard 
-            match="Current Match"
-            title=" No current Match"
+            match="France won the world cup"
+            // title=" No current Match"
             details={{}}
             leagueCaption={this.props.league.league.leagueCaption}
           />
@@ -47,11 +47,11 @@ class Dashboard extends React.Component {
           {/* To render Current matchCard */}
           {this.renderContent()}
 
-          { this.props.league.league && <MatchCard
+          {/* { this.props.league.league && <MatchCard
             match="Upcoming Match"
             details={this.props.fixture.fixture}
             leagueCaption={this.props.league.league.leagueCaption}
-          />}
+          />} */}
         </div>
       </section>
     );

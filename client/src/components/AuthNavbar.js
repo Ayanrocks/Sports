@@ -77,7 +77,7 @@ class AuthNavbar extends React.Component {
             News
           </NavLink>
           <NavLink
-            to='/news'
+            to='/profile'
             // onClick={this.activeTab}
             // value="profile"
             // className={

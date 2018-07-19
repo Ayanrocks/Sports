@@ -47,7 +47,7 @@ class Match extends React.Component {
     return ( 
       <div className="card">
         <h4 className="card__heading">{this.props.leagueCaption}</h4>
-        <h5 className="card__heading">{this.props.match} &mdash; </h5>
+        <h5 className="card__heading">{this.props.match}</h5>
 
         {/* //to render Upcoming match Fixture */}
         {this.renderContent()}

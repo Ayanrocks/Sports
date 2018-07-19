@@ -5,19 +5,21 @@ import Auth from "./Auth";
 import Dashboard from "./Dashboard";
 import Search from "./Search";
 import MyTeams from "./MyTeams";
+import News from "./News";
+import Profile from "./Profile";
 
 export default class App extends React.Component {
   render() {
-    return (
-      <BrowserRouter>
+    return <BrowserRouter>
         <div>
           <Route path="/" component={Home} exact />
           <Route path="/auth" component={Auth} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/search" component={Search} />
           <Route path="/myteams" component={MyTeams} />
+        <Route path="/news" component={News} />
+          <Route path="/profile" component={Profile} />
         </div>
-      </BrowserRouter>
-    );
+      </BrowserRouter>;
   }
 }
