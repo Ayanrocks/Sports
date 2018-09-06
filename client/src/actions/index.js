@@ -1,5 +1,13 @@
 import axios from "axios";
-import { GET_LEAGUE_DATA, GET_FIXTURE_DATA, GET_CURR_DATA } from "./type";
+import { GET_LEAGUE_DATA, GET_FIXTURE_DATA, GET_CURR_DATA, GET_COMPETITION_DATA } from "./type";
+
+//! ----------------Functions---------------
+
+function tierFilter(data){
+  return data.competitions.filter(val => {
+      return val.plan === 'TIER_ONE';
+  });
+}
 
 function filterArrayTimed(data) {
   return data.fixtures
@@ -40,28 +48,36 @@ async function getData(filteredData) {
   return finalData;
 }
 
-// -------------------EXPORTS---------------
+//! -----------------EXPORTS---------------
 
 export const getLeagueData = () => async dispatch => {
-  const res = await axios.get("/api/get_league_data");
-  dispatch({ type: GET_LEAGUE_DATA, payload: res.data });
+  // const res = await axios.get("/api/get_league_data");
+  // dispatch({ type: GET_LEAGUE_DATA, payload: res.data });
 };
 
 export const getFixtureData = () => async dispatch => {
-  const res = await axios.get("/api/get_fixture_data");
-  console.log(res.data);
-  const filteredData = filterArrayTimed(res.data);
-  const finalData = await getData(filteredData);
-  dispatch({ type: GET_FIXTURE_DATA, payload: finalData });
+  // const res = await axios.get("/api/get_fixture_data");
+  // // console.log(res.data);
+  // const filteredData = filterArrayTimed(res.data);
+  // const finalData = await getData(filteredData);
+  // dispatch({ type: GET_FIXTURE_DATA, payload: finalData });
 };
 
 export const getCurrentData = () => async dispatch => {
-  const res = await axios.get("/api/get_fixture_data");
-  const filteredData = filterArrayCurr(res.data);
-  if (filteredData.length === 0) {
-    dispatch({ type: GET_CURR_DATA, payload: null });
-  } else {
-    const finalData = await getData(filteredData);
-    dispatch({ type: GET_CURR_DATA, payload: finalData });
-  }
+  // const res = await axios.get("/api/get_fixture_data");
+  // const filteredData = filterArrayCurr(res.data);
+  // if (filteredData.length === 0) {
+  //   dispatch({ type: GET_CURR_DATA, payload: null });
+  // } else {
+  //   const finalData = await getData(filteredData);
+  //   dispatch({ type: GET_CURR_DATA, payload: finalData });
+  // }
 };
+
+export const getCompetitionData = () => async dispatch => {
+  const res = await axios.get("/api/get_competition_data");
+
+  const tierData = tierFilter(res.data);
+  console.log(tierData);
+  dispatch({type: GET_COMPETITION_DATA, payload: tierData})
+}

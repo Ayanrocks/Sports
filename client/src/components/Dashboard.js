@@ -13,7 +13,8 @@ class Dashboard extends React.Component {
 
     await this.props.getCurrentData();
 
-    console.log(this.props);
+
+    // console.log(this.props);
   }
 
   renderContent() {
