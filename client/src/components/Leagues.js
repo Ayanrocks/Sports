@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import AuthNavbar from "./AuthNavbar";
 import LeagueCard from "./LeagueCard";
@@ -10,9 +11,15 @@ class Search extends React.Component {
     await this.props.getCompetitionData();
     console.log(this.props);
   }
+  expand() {}
   renderContent() {
     return _.map(this.props.competition.current, val => {
-      return <LeagueCard leagueName={val.name} />
+      const url = "/" + val.code.toLowerCase();
+      return (
+        <Link key={val.id} to={url}>
+          <LeagueCard leagueName={val.name} />
+        </Link>
+      );
     });
   }
   render() {

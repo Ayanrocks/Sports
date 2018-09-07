@@ -8,6 +8,20 @@ import MyTeams from "./MyTeams";
 import News from "./News";
 import Profile from "./Profile";
 
+// Leagues
+import BsereA from "./leagues/BSerieA";
+import Bundesliga from "./leagues/Bundesliga";
+import Championship from "./leagues/Championship";
+import Eredivisie from "./leagues/Eredivisie";
+import EurChamp from "./leagues/EurChamp";
+import Ligue1 from "./leagues/Ligue1";
+import PremierLeague from "./leagues/PremierLeague";
+import PrimeraDiv from "./leagues/PrimeraDiv";
+import PrimeraLiga from "./leagues/PrimeraLiga";
+import SerieA from "./leagues/SerieA";
+import UEFAChamp from "./leagues/UEFAChamp";
+import WorldCup from "./leagues/WorldCup";
+
 export default class App extends React.Component {
   render() {
     return <BrowserRouter>
@@ -17,8 +31,19 @@ export default class App extends React.Component {
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/search" component={Leagues} />
           <Route path="/myteams" component={MyTeams} />
-        <Route path="/news" component={News} />
-          <Route path="/profile" component={Profile} />
+          <Route path="/news" component={News} />
+          <Route path="/bsa" component={BsereA} />
+          <Route path="/elc" component={Championship} />
+          <Route path="/pl" component={PremierLeague} />
+          <Route path="/ec" component={EurChamp} />
+          <Route path="/cl" component={UEFAChamp} />
+          <Route path="/fl1" component={Ligue1} />
+          <Route path="/bl1" component={Bundesliga} />
+          <Route path="/sa" component={SerieA} />
+          <Route path="/ded" component={Eredivisie} />
+          <Route path="/ppl" component={PrimeraLiga} />
+          <Route path="/pd" component={PrimeraDiv} />
+          <Route path="/wc" component={WorldCup} />
         </div>
       </BrowserRouter>;
   }
