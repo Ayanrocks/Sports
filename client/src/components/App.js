@@ -9,7 +9,7 @@ import News from "./News";
 import Profile from "./Profile";
 
 // Leagues
-import BsereA from "./leagues/BSerieA";
+import BserieA from "./leagues/BSerieA";
 import Bundesliga from "./leagues/Bundesliga";
 import Championship from "./leagues/Championship";
 import Eredivisie from "./leagues/Eredivisie";
@@ -24,7 +24,8 @@ import WorldCup from "./leagues/WorldCup";
 
 export default class App extends React.Component {
   render() {
-    return <BrowserRouter>
+    return (
+      <BrowserRouter>
         <div>
           <Route path="/" component={Home} exact />
           <Route path="/auth" component={Auth} />
@@ -32,19 +33,21 @@ export default class App extends React.Component {
           <Route path="/search" component={Leagues} />
           <Route path="/myteams" component={MyTeams} />
           <Route path="/news" component={News} />
-          <Route path="/bsa" component={BsereA} />
-          <Route path="/elc" component={Championship} />
-          <Route path="/pl" component={PremierLeague} />
-          <Route path="/ec" component={EurChamp} />
-          <Route path="/cl" component={UEFAChamp} />
-          <Route path="/fl1" component={Ligue1} />
-          <Route path="/bl1" component={Bundesliga} />
-          <Route path="/sa" component={SerieA} />
-          <Route path="/ded" component={Eredivisie} />
-          <Route path="/ppl" component={PrimeraLiga} />
-          <Route path="/pd" component={PrimeraDiv} />
-          <Route path="/wc" component={WorldCup} />
+          <Route path="/profile" component={Profile} />
+          <Route path="/:name" component={BserieA} />
+          <Route path="/:name" component={BserieA} />
+          <Route path="/:name" component={BserieA} />
+          <Route path="/:name" component={BserieA} />
+          <Route path="/:name" component={BserieA} />
+          <Route path="/:name" component={Ligue1} />
+          <Route path="/:name" component={Bundesliga} />
+          <Route path="/:name" component={SerieA} />
+          <Route path="/:name" component={Eredivisie} />
+          <Route path="/:name" component={PrimeraLiga} />
+          <Route path="/:name" component={PrimeraDiv} />
+          <Route path="/:name" component={WorldCup} />
         </div>
-      </BrowserRouter>;
+      </BrowserRouter>
+    );
   }
 }

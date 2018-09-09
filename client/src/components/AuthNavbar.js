@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../assets/svg/logo.svg";
-import { Link, Redirect, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 class AuthNavbar extends React.Component {
   constructor(props) {

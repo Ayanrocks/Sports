@@ -1,11 +1,16 @@
 import axios from "axios";
-import { GET_LEAGUE_DATA, GET_FIXTURE_DATA, GET_CURR_DATA, GET_COMPETITION_DATA } from "./type";
+import {
+  GET_LEAGUE_DATA,
+  GET_FIXTURE_DATA,
+  GET_CURR_DATA,
+  GET_COMPETITION_DATA
+} from "./type";
 
 //! ----------------Functions---------------
 
-function tierFilter(data){
+function tierFilter(data) {
   return data.competitions.filter(val => {
-      return val.plan === 'TIER_ONE';
+    return val.plan === "TIER_ONE";
   });
 }
 
@@ -50,9 +55,9 @@ async function getData(filteredData) {
 
 //! -----------------EXPORTS---------------
 
-export const getLeagueData = () => async dispatch => {
-  // const res = await axios.get("/api/get_league_data");
-  // dispatch({ type: GET_LEAGUE_DATA, payload: res.data });
+export const getLeagueData = id => async dispatch => {
+  const res = await axios.get("/api/get_league_data/" + id);
+  dispatch({ type: GET_LEAGUE_DATA, payload: res.data });
 };
 
 export const getFixtureData = () => async dispatch => {
@@ -78,6 +83,5 @@ export const getCompetitionData = () => async dispatch => {
   const res = await axios.get("/api/get_competition_data");
 
   const tierData = tierFilter(res.data);
-  console.log(tierData);
-  dispatch({type: GET_COMPETITION_DATA, payload: tierData})
-}
+  dispatch({ type: GET_COMPETITION_DATA, payload: tierData });
+};

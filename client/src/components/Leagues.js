@@ -9,14 +9,12 @@ import _ from "lodash";
 class Search extends React.Component {
   async componentDidMount() {
     await this.props.getCompetitionData();
-    console.log(this.props);
   }
-  expand() {}
   renderContent() {
     return _.map(this.props.competition.current, val => {
       const url = "/" + val.code.toLowerCase();
       return (
-        <Link key={val.id} to={url}>
+        <Link key={val.id} to={{ pathname: url, state: { id: val.id } }}>
           <LeagueCard leagueName={val.name} />
         </Link>
       );

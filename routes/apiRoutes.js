@@ -2,10 +2,10 @@ const request = require("request");
 const keys = require("../config/keys");
 
 module.exports = app => {
-  app.get("/api/get_league_data", (req, res) => {
+  app.get("/api/get_league_data/:id", (req, res) => {
     request(
       {
-        url: "http://api.football-data.org/v2/competitions/2000/leagueTable",
+        url: `http://api.football-data.org/v2/competitions/${req.params.id}`,
         headers: {
           "X-Auth-Token": keys.footballAPIKey
         }

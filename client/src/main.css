@@ -67,6 +67,16 @@ a:visited {
   position: relative;
   font-family: 'Lato'; }
 
+.heading {
+  font-family: 'Lato';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 4px;
+  font-weight: 200;
+  font-size: 2rem; }
+
 .icon-white {
   color: #fff; }
 
