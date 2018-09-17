@@ -368,6 +368,18 @@ nav {
   .leagueCard__heading {
     font-weight: 100; }
 
+.sweet-loading {
+  position: relative;
+  height: 100%;
+  width: 95%;
+  margin: 0 0 0 10rem;
+  background-color: #fff;
+  z-index: 999; }
+  .sweet-loading--stop {
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1; }
+
 .home-title__heading {
   position: absolute;
   top: 53.5%;

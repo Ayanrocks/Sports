@@ -15,7 +15,7 @@ class Search extends React.Component {
       const url = "/" + val.code.toLowerCase();
       return (
         <Link key={val.id} to={{ pathname: url, state: { id: val.id } }}>
-          <LeagueCard leagueName={val.name} />
+          <LeagueCard key={val.id} leagueName={val.name} />
         </Link>
       );
     });
