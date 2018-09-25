@@ -56,8 +56,12 @@ async function getData(filteredData) {
 //! -----------------EXPORTS---------------
 
 export const getLeagueData = id => async dispatch => {
-  const res = await axios.get("/api/get_league_data/" + id);
-  dispatch({ type: GET_LEAGUE_DATA, payload: res.data });
+  try {
+    const res = await axios.get("/api/get_league_data/" + id);
+    dispatch({ type: GET_LEAGUE_DATA, payload: res.data });
+  } catch (err) {
+    dispatch({ type: GET_LEAGUE_DATA, payload: null });
+  }
 };
 
 export const getFixtureData = () => async dispatch => {
@@ -81,7 +85,10 @@ export const getCurrentData = () => async dispatch => {
 
 export const getCompetitionData = () => async dispatch => {
   const res = await axios.get("/api/get_competition_data");
-
-  const tierData = tierFilter(res.data);
-  dispatch({ type: GET_COMPETITION_DATA, payload: tierData });
+  try {
+    const tierData = tierFilter(res.data);
+    dispatch({ type: GET_COMPETITION_DATA, payload: tierData });
+  } catch (err) {
+    console.log(err);
+  }
 };
