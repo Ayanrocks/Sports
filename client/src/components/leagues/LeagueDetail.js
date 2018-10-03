@@ -15,7 +15,7 @@ const override = css`
   margin: 0 auto;
 `;
 
-class BsereA extends React.Component {
+class LeagueDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,10 +29,33 @@ class BsereA extends React.Component {
     }
     console.log(this.props);
   }
+  renderContent() {
+    if (this.state.loading === false) {
+      if (this.props.league.league.name !== undefined) {
+        return (
+          <div className="league">
+            <h1 className="league__heading">
+              {this.props.league.league.name} - {this.props.match.params.name}
+            </h1>
+            <h1 className="league__country">
+              Country of Origin - {this.props.league.league.area.name}
+            </h1>
+            <h3 className="league__season">
+              Current Season: {this.props.league.league.currentSeason.startDate}{" "}
+              - {this.props.league.league.currentSeason.endDate}
+            </h3>
+          </div>
+        );
+      }
+      if (this.props.league.league.message !== undefined) {
+        return <h5 className="League__error">{this.props.league.league.message} And refresh the page</h5>;
+      }
+    }
+  }
 
   render() {
     return (
-      <div className="league">
+      <div className="leagueDetail">
         <div
           className={
             this.state.loading ? "sweet-loading" : "sweet-loading--stop"
@@ -42,24 +65,12 @@ class BsereA extends React.Component {
             className={override}
             sizeUnit={"px"}
             size={90}
-            // height={90}
-            // width={6}
-            // radius={2}
             color={"#E62314"}
             loading={this.state.loading}
           />
         </div>
-
         <AuthNavbar />
-
-        {this.props.league.league && (
-          <div>
-            <h1 className="league__heading">
-              {this.props.league.league.name} - {this.props.match.params.name}
-            </h1>
-            <h3 className="league__country">Country of Origin - {this.props.league.league.area.name}</h3>
-          </div>
-        )}
+        {this.renderContent()}
       </div>
     );
   }
@@ -74,4 +85,4 @@ function mapStateToProps({ league }) {
 export default connect(
   mapStateToProps,
   { getLeagueData }
-)(BsereA);
+)(LeagueDetail);

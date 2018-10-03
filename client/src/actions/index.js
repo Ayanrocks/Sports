@@ -14,50 +14,51 @@ function tierFilter(data) {
   });
 }
 
-function filterArrayTimed(data) {
-  return data.fixtures
-    .filter(val => {
-      return val.status === "TIMED";
-    })
-    .slice(0, 1);
-}
+// function filterArrayTimed(data) {
+//   return data.fixtures
+//     .filter(val => {
+//       return val.status === "TIMED";
+//     })
+//     .slice(0, 1);
+// }
 
-function filterArrayCurr(data) {
-  return data.fixtures.filter(val => {
-    return val.status === "IN_PLAY";
-  });
-}
+// function filterArrayCurr(data) {
+//   return data.fixtures.filter(val => {
+//     return val.status === "IN_PLAY";
+//   });
+// }
 
-function combineData(details, homeFlag, awayFlag) {
-  return {
-    homeTeamName: details.homeTeamName,
-    awayTeamName: details.awayTeamName,
-    goalsAwayTeam: details.result.goalsAwayTeam,
-    goalsHomeTeam: details.result.goalsHomeTeam,
-    homeFlag: homeFlag,
-    awayFlag: awayFlag
-  };
-}
+// function combineData(details, homeFlag, awayFlag) {
+//   return {
+//     homeTeamName: details.homeTeamName,
+//     awayTeamName: details.awayTeamName,
+//     goalsAwayTeam: details.result.goalsAwayTeam,
+//     goalsHomeTeam: details.result.goalsHomeTeam,
+//     homeFlag: homeFlag,
+//     awayFlag: awayFlag
+//   };
+// }
 
-async function getData(filteredData) {
-  const homeTeamDetails = await axios.post("/api/getTeamData", {
-    url: filteredData[0]._links.homeTeam.href
-  });
-  const homeTeamFlag = homeTeamDetails.data.crestUrl;
-  const awayTeamDetails = await axios.post("/api/getTeamData", {
-    url: filteredData[0]._links.awayTeam.href
-  });
-  const awayTeamFlag = awayTeamDetails.data.crestUrl;
+// async function getData(filteredData) {
+//   const homeTeamDetails = await axios.post("/api/getTeamData", {
+//     url: filteredData[0]._links.homeTeam.href
+//   });
+//   const homeTeamFlag = homeTeamDetails.data.crestUrl;
+//   const awayTeamDetails = await axios.post("/api/getTeamData", {
+//     url: filteredData[0]._links.awayTeam.href
+//   });
+//   const awayTeamFlag = awayTeamDetails.data.crestUrl;
 
-  const finalData = combineData(filteredData[0], homeTeamFlag, awayTeamFlag);
-  return finalData;
-}
+//   const finalData = combineData(filteredData[0], homeTeamFlag, awayTeamFlag);
+//   return finalData;
+// }
 
 //! -----------------EXPORTS---------------
 
 export const getLeagueData = id => async dispatch => {
   try {
     const res = await axios.get("/api/get_league_data/" + id);
+    console.log(typeof(res));
     dispatch({ type: GET_LEAGUE_DATA, payload: res.data });
   } catch (err) {
     dispatch({ type: GET_LEAGUE_DATA, payload: null });

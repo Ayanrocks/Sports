@@ -16,7 +16,6 @@ class AuthNavbar extends React.Component {
   activeTab(e) {
     this.setState({ active: e.target.value });
     console.log(this.state);
-    // window.location.href =  "/" + e.target.value;
   }
 
   render() {
@@ -26,67 +25,24 @@ class AuthNavbar extends React.Component {
           <img src={Logo} alt="logo" title="Sports By Orilliance" />
         </Link>
         <div className="nav__link">
-          <NavLink
-            to="/dashboard"
-            // onClick={this.activeTab}
-            // value="dashboard"
-            className='nav-item'
-            // className={
-            //   this.state.active === "dashboard"
-            //     ? "nav-item active-tab"
-            //     : "nav-item"
-            // }
-          >
+          <NavLink to="/dashboard" className="nav-item">
             Dashboard
           </NavLink>
           <NavLink
             to="/search"
             // onClick={this.activeTab}
-            // value="search"
-            className='nav-item'
-            // className={
-            //   this.state.active === "search"
-            //     ? "nav-item active-tab"
-            //     : "nav-item"
-            // }
+
+            className="nav-item"
           >
             Search
           </NavLink>
-          <NavLink
-            to="/myteams"
-            // onClick={this.activeTab}
-            value="myteams"
-            // className={
-            //   this.state.active === "myteams"
-            //     ? "nav-item active-tab"
-            //     : "nav-item"
-            // }
-            className='nav-item'
-          >
+          <NavLink to="/myteams" value="myteams" className="nav-item">
             My Teams
           </NavLink>
-          <NavLink
-          to='/news'
-            // onClick={this.activeTab}
-            // value="news"
-            // className={
-            //   this.state.active === "news" ? "nav-item active-tab" : "nav-item"
-            // }
-            className='nav-item'
-          >
+          <NavLink to="/news" className="nav-item">
             News
           </NavLink>
-          <NavLink
-            to='/profile'
-            // onClick={this.activeTab}
-            // value="profile"
-            // className={
-            //   this.state.active === "profile"
-            //     ? "nav-item active-tab"
-            //     : "nav-item"
-            // }
-          className='nav-item'
-          >
+          <NavLink to="/profile" className="nav-item">
             Profile
           </NavLink>
         </div>
