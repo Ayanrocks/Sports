@@ -2,8 +2,9 @@ import React from "react";
 import { css } from "react-emotion";
 import { connect } from "react-redux";
 import { HashLoader } from "react-spinners";
+import _ from "lodash";
 
-import { getLeagueData } from "../../actions";
+import { getLeagueData, getTeamData } from "../../actions";
 import AuthNavbar from "../AuthNavbar";
 
 const override = css`
@@ -25,9 +26,17 @@ class LeagueDetail extends React.Component {
   async componentDidMount(prevProps) {
     if (this.props.location.state) {
       await this.props.getLeagueData(this.props.location.state.id);
+      await this.props.getTeamData(this.props.location.state.id);
       this.setState({ loading: false });
     }
     console.log(this.props);
+  }
+  teamList() {
+    return _.map(this.props.teams.teams.teams, val => (
+      <div className="teams__cards" key={val.id}>
+        {val.name}
+      </div>
+    ));
   }
   renderContent() {
     if (this.state.loading === false) {
@@ -37,18 +46,31 @@ class LeagueDetail extends React.Component {
             <h1 className="league__heading">
               {this.props.league.league.name} - {this.props.match.params.name}
             </h1>
-            <h1 className="league__country">
-              Country of Origin - {this.props.league.league.area.name}
-            </h1>
-            <h3 className="league__season">
-              Current Season: {this.props.league.league.currentSeason.startDate}{" "}
-              - {this.props.league.league.currentSeason.endDate}
-            </h3>
+            <div className="leagueDetail__card">
+              <h3 className="league__country">
+                Country of Origin - {this.props.league.league.area.name}
+              </h3>
+              <h3 className="league__season">
+                Current Season:{" "}
+                {this.props.league.league.currentSeason.startDate} -{" "}
+                {this.props.league.league.currentSeason.endDate}
+              </h3>
+            </div>
+            <div className="league__teamCard">
+              <div className="league__teams">
+                <h3 className="league__teams--heading">Teams</h3>
+                <div className="league__teams--list">{this.teamList()}</div>
+              </div>
+            </div>
           </div>
         );
       }
       if (this.props.league.league.message !== undefined) {
-        return <h5 className="League__error">{this.props.league.league.message} And refresh the page</h5>;
+        return (
+          <h5 className="league__error">
+            {this.props.league.league.message} And refresh the page
+          </h5>
+        );
       }
     }
   }
@@ -76,13 +98,14 @@ class LeagueDetail extends React.Component {
   }
 }
 
-function mapStateToProps({ league }) {
+function mapStateToProps({ league, teams }) {
   return {
-    league
+    league,
+    teams
   };
 }
 
 export default connect(
   mapStateToProps,
-  { getLeagueData }
+  { getLeagueData, getTeamData }
 )(LeagueDetail);

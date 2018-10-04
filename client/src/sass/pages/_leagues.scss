@@ -13,6 +13,7 @@
         font-weight: 200;
     }
 
+
     &__container {
         position: absolute;
         display: flex;
@@ -23,8 +24,90 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    &__error {
+        font-size: 2.9rem;
+        font-weight: 100;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
-.league__country {
-    background-color: #f00;
+
+.leagueDetail {
+    .league {
+        &__country {
+            font-weight: 100;
+            font-size: 2.6rem;
+
+        }
+
+        &__season {
+            font-weight: 100;
+            font-size: 2.6rem;
+        }
+
+        &__teamCard {
+            position: relative;
+            top: 40%;
+            margin: 0 auto;
+            width: 75%;
+            padding: 2rem;
+            border: 1px solid rgba(231, 231, 231, 0.904);
+            border-radius: 4px;
+            box-shadow: 0 2px 4px #eee;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .league {
+                &__teams {
+                    flex: 0 1 100%;
+
+                    &--heading {
+                        text-align: center;
+                        font-size: 2.4rem;
+                        font-weight: 100;
+                    }
+
+                    &--list {
+                        display: flex;
+                        justify-content: space-around;
+                        flex-wrap: wrap;
+                        align-items: center;
+
+                        .teams__cards {
+                            padding: 1rem;
+                            margin: 2rem;
+                            border: 1px solid rgba(231, 231, 231, 0.804);
+                            border-radius: 4px;
+
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+
+    }
+
+    &__card {
+        position: relative;
+        top: 30%;
+        margin: 0 auto;
+        width: 75%;
+        padding: 2rem;
+        border: 1px solid rgba(231, 231, 231, 0.904);
+        border-radius: 4px;
+        box-shadow: 0 2px 4px #eee;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
 }

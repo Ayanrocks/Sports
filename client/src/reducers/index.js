@@ -1,12 +1,10 @@
 import { combineReducers } from "redux";
 import getLeagueData from "./getLeagueData";
-import getFixtureData from "./getFixtureData";
-import getCurrData from "./getCurrData";
-import getCompetitionData  from "./getCompetitionData";
+import getCompetitionData from "./getCompetitionData";
+import getTeamData from "./getTeamData";
 
 export default combineReducers({
   league: getLeagueData,
-  fixture: getFixtureData,
-  current: getCurrData,
-  competition: getCompetitionData
+  competition: getCompetitionData,
+  teams: getTeamData
 });

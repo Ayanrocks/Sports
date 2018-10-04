@@ -32,7 +32,9 @@ export default class App extends React.Component {
             </Switch>
           </BrowserRouter>
         </Online>
-        <Offline>You're Offline. Please go online to use the app</Offline>
+        <Offline>
+          <h1 className="card__heading">You're Offline. Please Connect to the internet to use this app</h1>
+        </Offline>
       </div>
     );
   }

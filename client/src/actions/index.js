@@ -1,9 +1,8 @@
 import axios from "axios";
 import {
   GET_LEAGUE_DATA,
-  GET_FIXTURE_DATA,
-  GET_CURR_DATA,
-  GET_COMPETITION_DATA
+  GET_COMPETITION_DATA,
+  GET_TEAM_DATA
 } from "./type";
 
 //! ----------------Functions---------------
@@ -58,10 +57,9 @@ function tierFilter(data) {
 export const getLeagueData = id => async dispatch => {
   try {
     const res = await axios.get("/api/get_league_data/" + id);
-    console.log(typeof(res));
     dispatch({ type: GET_LEAGUE_DATA, payload: res.data });
   } catch (err) {
-    dispatch({ type: GET_LEAGUE_DATA, payload: null });
+    throw err;
   }
 };
 
@@ -93,3 +91,10 @@ export const getCompetitionData = () => async dispatch => {
     console.log(err);
   }
 };
+
+
+export const getTeamData = id => async dispatch => {
+  const res = await axios.get(`/api/get_team_data/${id}`);
+  console.log(res.data)
+  dispatch({ type: GET_TEAM_DATA, payload: res.data});
+}
