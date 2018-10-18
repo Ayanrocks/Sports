@@ -598,4 +598,5 @@ nav {
   box-shadow: 0 2px 4px #eee;
   display: flex;
   justify-content: space-around;
-  align-items: center; }
+  align-items: center;
+  margin: 5rem auto; }

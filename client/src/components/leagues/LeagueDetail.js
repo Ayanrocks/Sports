@@ -56,6 +56,14 @@ class LeagueDetail extends React.Component {
                 {this.props.league.league.currentSeason.endDate}
               </h3>
             </div>
+            <div className="leagueDetail__card">
+              <h3 className="league__heading">
+                Standings
+              </h3>
+              <div className="league__standings">
+                
+              </div>
+            </div>
             <div className="league__teamCard">
               <div className="league__teams">
                 <h3 className="league__teams--heading">Teams</h3>

@@ -18,7 +18,7 @@ class Dashboard extends React.Component {
   }
 
   renderContent() {
-    if (_.isEmpty(this.props.current.current)) {
+    if (_.isEmpty(this.props.current)) {
       if (this.props.league.league) {
         return (
           <MatchCard 
