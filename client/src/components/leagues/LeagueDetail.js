@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { HashLoader } from "react-spinners";
 import _ from "lodash";
 
-import { getLeagueData, getTeamData } from "../../actions";
+import { getLeagueData, getTeamData , getStandingsData} from "../../actions";
 import AuthNavbar from "../AuthNavbar";
 
 const override = css`
@@ -27,6 +27,7 @@ class LeagueDetail extends React.Component {
     if (this.props.location.state) {
       await this.props.getLeagueData(this.props.location.state.id);
       await this.props.getTeamData(this.props.location.state.id);
+      await this.props.getStandingsData(this.props.league.league.id);
       this.setState({ loading: false });
     }
     console.log(this.props);
@@ -61,7 +62,7 @@ class LeagueDetail extends React.Component {
                 Standings
               </h3>
               <div className="league__standings">
-                
+
               </div>
             </div>
             <div className="league__teamCard">
@@ -115,5 +116,5 @@ function mapStateToProps({ league, teams }) {
 
 export default connect(
   mapStateToProps,
-  { getLeagueData, getTeamData }
+  { getLeagueData, getTeamData, getStandingsData }
 )(LeagueDetail);

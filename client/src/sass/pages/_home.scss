@@ -7,6 +7,7 @@
     margin-bottom: 1rem;
     color: #fff;
   }
+
   &__button {
     background-color: #da2c38;
     color: #fff;
@@ -16,21 +17,24 @@
     padding: 1rem 4.5rem 1rem 2rem;
     position: absolute;
     top: 63%;
-    left: 10%;
+    left: 11.8%;
     font-weight: bold;
     font-size: 1.4rem;
+
     & .material-icons {
       position: absolute;
       top: 30%;
       left: 75%;
       font-size: 1.5rem;
     }
+
     &:hover {
       .material-icons {
         animation-name: arrowMove;
         animation-duration: 0.5s;
         animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
       }
+
       .button__text {
         animation: fadeIn 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
       }
@@ -44,17 +48,20 @@
   right: 3%;
   display: flex;
   justify-content: space-between;
+
   & .login-div {
     margin-right: 4rem;
     position: relative;
     overflow: hidden;
     padding: 1rem;
     backface-visibility: hidden;
+
     & .login {
       border: none;
       font-size: 1.9rem;
       background-color: transparent;
     }
+
     & .dash {
       background-color: #000;
       height: 2px;
@@ -64,6 +71,7 @@
       opacity: 1;
       backface-visibility: hidden;
     }
+
     &:hover {
       & .dash {
         @include lineMove(lineMove, 8rem) {
@@ -72,6 +80,7 @@
       }
     }
   }
+
   & .signup-div {
     position: relative;
     backface-visibility: hidden;
@@ -82,6 +91,7 @@
     overflow: hidden;
     transition: all 0.4s ease;
     z-index: 1;
+
     & .signup {
       border: none;
       font-size: 1.9rem;
@@ -90,10 +100,12 @@
       z-index: 1;
 
       &:hover {
+
         &::before,
         &::after {
           height: 100%;
         }
+
         color: #fff;
       }
 
@@ -113,10 +125,166 @@
         background-color: rgba(255, 196, 0, 0.883);
         transition: all 0.4s ease;
       }
+
       &::after {
         background-color: #f33;
         transition: all 0.6s ease;
       }
     }
+  }
+}
+
+
+.about {
+  position: relative;
+  margin-bottom: -10rem;
+  height: 100vh;
+
+  & .heading {
+    font-family: 'Josefin Sans';
+    font-size: 4rem;
+    font-weight: 400;
+    margin-top: 5rem;
+    border-bottom: 0.5px solid #000;
+    padding: 1rem;
+
+  }
+
+  & .content {
+    margin-top: 30rem;
+  }
+
+  & .left {
+    width: 50%;
+    float: left;
+    padding: 8rem;
+
+    &__content {
+      font-weight: 200;
+      width: 100%;
+      height: 100%;
+      font-size: 2rem;
+      padding: 3rem;
+      letter-spacing: 1px;
+      line-height: 3rem
+    }
+  }
+
+  & .right {
+    width: 50%;
+    float: right;
+    padding: 5rem 15rem;
+
+  }
+}
+
+.open-source {
+  position: relative;
+  height: 100vh;
+
+  & .heading {
+    font-family: 'Josefin Sans';
+    font-size: 4rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    border-bottom: 0.5px solid #000;
+    padding: 1rem;
+
+  }
+
+  & .content {
+    margin-top: 25rem;
+  }
+
+  & .right {
+    width: 50%;
+    float: right;
+    padding: 8rem;
+
+    &__content {
+      font-weight: 200;
+      width: 100%;
+      height: 100%;
+      font-size: 2rem;
+      padding: 3rem;
+      letter-spacing: 1px;
+      line-height: 3rem
+    }
+  }
+
+  & .left {
+    width: 50%;
+    float: left;
+    padding: 5rem 15rem;
+
+  }
+}
+
+.footer {
+  position: relative;
+  background-color: rgb(16, 29, 54);
+  z-index: 999;
+  padding: 10rem;
+  height: 95vh;
+
+  & .content {
+    margin-top: 15rem;
+  }
+
+  & .right {
+    width: 50%;
+    float: right;
+
+    &__content {
+      color: #fff;
+      font-weight: 200;
+      width: 100%;
+      height: 100%;
+      font-size: 2rem;
+      padding-top: 5rem;
+      letter-spacing: 1px;
+      line-height: 3rem;
+      padding-left: 20rem;
+
+      .links {
+
+        a,
+        a:visited,
+        a:link {
+          color: #fff;
+        }
+
+        &__list {
+          list-style: none;
+
+          &__item {}
+        }
+      }
+    }
+  }
+
+  & .left {
+    width: 50%;
+    float: left;
+
+    img {
+      width: 15rem;
+      height: 15rem;
+    }
+
+    h5{
+      color: #fff;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  & .info {
+    color: #fff;
+    position: absolute;
+    top: 80%;
+    left: 35%;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
   }
 }

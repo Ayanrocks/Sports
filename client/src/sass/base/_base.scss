@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700|Lato:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:200,400,600,700|Lato:300,400,700');
 
 *,
 *::after,
@@ -15,6 +15,19 @@ html {
 body {
     box-sizing: border-box;
     overflow-x: hidden;
+    font-family: 'Josefin Sans';
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: red;
+    background: yellow;
+}
+
+
+::selection{
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 25, 25);
 }
 
 h2 {
@@ -35,6 +48,27 @@ a,
 a:link,
 a:visited {
     text-decoration: none;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.container {
+    margin-left: 10rem;
+}
+
+.row {
+    width: 80%;
+    margin: 0 auto;
+    // height: 100vh;
+    overflow: hidden;
 }
 
 .auth {
@@ -75,3 +109,4 @@ a:visited {
     font-weight: 200;
     font-size: 2rem;
 }
+

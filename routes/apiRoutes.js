@@ -46,4 +46,22 @@ module.exports = app => {
       }
     );
   });
+
+  //Standings Data
+  app.get("/api/get_standings_data/:id", (req, res) => {
+    request(
+      {
+        url: `http://api.football-data.org/v2/competitions/${
+          req.params.id
+        }/standings`,
+        headers: {
+          "X-Auth-Token": keys.footballAPIKey
+        }
+      },
+      (err, data) => {
+        var data = JSON.parse(data.body);
+        res.send(data);
+      }
+    );
+  });
 };

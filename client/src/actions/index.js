@@ -2,7 +2,8 @@ import axios from "axios";
 import {
   GET_LEAGUE_DATA,
   GET_COMPETITION_DATA,
-  GET_TEAM_DATA
+  GET_TEAM_DATA,
+  GET_STANDINGS_DATA
 } from "./type";
 
 //! ----------------Functions---------------
@@ -92,9 +93,12 @@ export const getCompetitionData = () => async dispatch => {
   }
 };
 
-
 export const getTeamData = id => async dispatch => {
   const res = await axios.get(`/api/get_team_data/${id}`);
-  console.log(res.data)
-  dispatch({ type: GET_TEAM_DATA, payload: res.data});
-}
+  dispatch({ type: GET_TEAM_DATA, payload: res.data });
+};
+
+export const getStandingsData = id => async dispatch => {
+  const res = await axios.get(`/api/get_standings_data/${id}`);
+  dispatch({ type: GET_STANDINGS_DATA, payload: res.data });
+};
