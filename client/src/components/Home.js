@@ -94,7 +94,7 @@ const Home = () => (
                 <div className="links">
                   <ul className="links__list">
                     <li className="links__list--item">
-                      <Link to="">Contact Us</Link>
+                      <Link to="/contact">Contact Us</Link>
                     </li>
                     <li className="links__list--item">
                       <Link to="">FAQ</Link>

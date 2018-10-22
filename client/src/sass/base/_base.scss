@@ -25,7 +25,7 @@ body {
 }
 
 
-::selection{
+::selection {
     color: rgb(255, 255, 255);
     background-color: rgb(255, 25, 25);
 }
@@ -110,3 +110,11 @@ a:visited {
     font-size: 2rem;
 }
 
+
+.offline__heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.8rem;
+}

@@ -14,6 +14,7 @@ module.exports = app => {
     passport.authenticate("google"),
     (req, res) => {
       console.log("callback success");
+      res.redirect("/dashboard");
     }
   );
 
@@ -28,6 +29,7 @@ module.exports = app => {
     passport.authenticate("facebook"),
     (req, res) => {
       console.log("FAcebook Sucess");
+      res.redirect("/dashboard");
     }
   );
 };

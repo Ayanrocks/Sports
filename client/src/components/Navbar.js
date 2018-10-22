@@ -13,8 +13,8 @@ const Navbar = () => (
     </div>
     <Link to="/privacy-policy" className="social">
     <div className="arrow">
-        <i className="fas fa-file-alt fa-2x icon-white arrow-up" />
-        <i className="fas fa-file-alt fa-2x icon-white arrow-dn" />
+        <i className="fas fa-file-alt fa-3x icon-white arrow-up" />
+        <i className="fas fa-file-alt fa-3x icon-white arrow-dn" />
 
     </div>
     </Link>

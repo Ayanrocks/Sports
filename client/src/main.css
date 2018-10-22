@@ -103,6 +103,13 @@ a:visited {
   font-weight: 200;
   font-size: 2rem; }
 
+.offline__heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.8rem; }
+
 .icon-white {
   color: #fff; }
 
@@ -126,13 +133,13 @@ nav {
     margin: 0 auto;
     overflow: hidden;
     position: relative;
-    height: 2.1rem;
+    height: 2.5rem;
     width: 4rem; }
     nav .arrow i {
       transition: all 0.6s ease; }
     nav .arrow .arrow-up {
       position: absolute;
-      top: -5px;
+      top: -2px;
       right: 50%;
       transform: translateX(50%); }
     nav .arrow .arrow-dn {
@@ -141,7 +148,7 @@ nav {
       right: 50%;
       transform: translateX(50%); }
     nav .arrow:hover i {
-      transform: translateX(50%) translateY(-110%); }
+      transform: translateX(50%) translateY(-145%); }
   nav .social {
     margin: 0 auto; }
 
@@ -616,6 +623,20 @@ nav {
     transform: translateY(-50%);
     font-size: 1.6rem; }
 
+.contact {
+  margin: 0 auto;
+  transform: translateX(-50%);
+  padding: 8rem;
+  width: 40%;
+  height: 40%;
+  border: 1px solid rgba(241, 241, 241, 0.8);
+  box-shadow: 1px 2px 4px rgba(240, 240, 240, 0.8);
+  font-family: 'Lato'; }
+  .contact__heading {
+    font-family: inherit;
+    margin: 5rem auto;
+    font-weight: 400; }
+
 .auth-cover {
   background-color: #ff3333;
   clip-path: polygon(0 0, 60% 0%, 45% 100%, 0% 100%);
@@ -731,3 +752,31 @@ nav {
   justify-content: space-around;
   align-items: center;
   margin: 5rem auto; }
+
+.profile__content {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.profile__photo {
+  margin: 0 auto;
+  text-align: center; }
+  .profile__photo img {
+    border-radius: 500px;
+    height: 25rem;
+    width: 25rem; }
+
+.profile__details {
+  text-align: center;
+  margin: 5rem auto; }
+  .profile__details__name {
+    margin-top: 2rem;
+    font-size: 4rem; }
+  .profile__details__item {
+    font-family: 'Lato';
+    margin-top: 2rem;
+    font-size: 3rem;
+    font-weight: 100; }
+  .profile__details__item:nth-child(3) {
+    text-transform: capitalize; }

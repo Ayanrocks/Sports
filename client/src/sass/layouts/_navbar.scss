@@ -21,14 +21,14 @@ nav {
         overflow: hidden;
         position: relative; 
         // padding: 1rem;
-        height: 2.1rem;
+        height: 2.5rem;
         width: 4rem;
         & i {
             transition: all 0.6s ease;
         }
         & .arrow-up {
             position: absolute;
-            top: -5px;
+            top: -2px;
             right: 50%;
             transform: translateX(50%);
         }
@@ -39,7 +39,7 @@ nav {
             transform: translateX(50%);
         }
         &:hover i {
-            transform: translateX(50%) translateY(-110%);
+            transform: translateX(50%) translateY(-145%);
         }
     }
     & .social {
