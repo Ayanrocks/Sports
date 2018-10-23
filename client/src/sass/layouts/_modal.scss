@@ -1,0 +1,51 @@
+.modal {
+    z-index: 999;
+    opacity: 0.95;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+
+    &__box {
+        padding: 4rem;
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        background-color: #fcfcfc;
+        width: 40%;
+    }
+
+    &__heading {
+        font-weight: 100;
+        font-size: 2.8rem;
+    }
+
+    &__warning {
+        font-size: 2rem;
+        margin: 10rem;
+    }
+
+    &__button {
+        cursor: pointer;
+        margin-top: 4rem;
+        font-size: 2.2rem;
+        padding: 2rem 4rem;
+        border: none;
+        color: #fff;
+        background-color: red;
+        border: 2px solid red;
+        border-radius: 100px;
+    }
+
+    &__X {
+        cursor: pointer;
+        position: absolute;
+        top: 10%;
+        left: 90%;
+    }
+}

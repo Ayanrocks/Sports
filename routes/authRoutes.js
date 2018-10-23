@@ -32,4 +32,10 @@ module.exports = app => {
       res.redirect("/dashboard");
     }
   );
+
+  //Logout 
+  app.get('/logout', (req,res) => {
+    req.logout();
+    res.redirect('/');
+  })
 };
