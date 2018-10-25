@@ -4,7 +4,7 @@ import { Online, Offline } from "react-detect-offline";
 
 //Custom components
 import Home from "./Home";
-import Contact from './Contact';
+import Contact from "./Contact";
 import Auth from "./Auth";
 import Dashboard from "./Dashboard";
 import Leagues from "./Leagues";
@@ -14,15 +14,17 @@ import Profile from "./Profile";
 
 // Leagues
 import LeagueDetail from "./leagues/LeagueDetail";
+import TeamDetail from "./leagues/TeamDetail.js";
 
 export default class App extends React.Component {
   render() {
-    return <div>
+    return (
+      <div>
         <Online>
           <BrowserRouter>
             <Switch>
               <Route path="/" component={Home} exact />
-              <Route path="/contact" component={Contact}/>
+              <Route path="/contact" component={Contact} />
               <Route path="/faq" component={Home} exact />
 
               <Route path="/auth" component={Auth} />
@@ -31,7 +33,8 @@ export default class App extends React.Component {
               <Route path="/myteams" component={MyTeams} />
               <Route path="/news" component={News} />
               <Route path="/profile" component={Profile} />
-              <Route path="/:name" component={LeagueDetail} />
+              <Route path="/league/:name" component={LeagueDetail} />
+              <Route path="/team/:teamid" component={TeamDetail} />
             </Switch>
           </BrowserRouter>
         </Online>
@@ -40,6 +43,7 @@ export default class App extends React.Component {
             You're Offline. Please Connect to the Internet to use this App :)
           </h1>
         </Offline>
-      </div>;
+      </div>
+    );
   }
 }

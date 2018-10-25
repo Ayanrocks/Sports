@@ -4,7 +4,8 @@ import {
   GET_COMPETITION_DATA,
   GET_TEAM_DATA,
   GET_STANDINGS_DATA,
-  GET_PROFILE_DATA
+  GET_PROFILE_DATA,
+  GET_ONE_TEAM_DATA
 } from "./type";
 
 //! ----------------Functions---------------
@@ -107,4 +108,9 @@ export const getStandingsData = id => async dispatch => {
 export const getProfileData = () => async dispatch => {
   const res = await axios.get("/profile/data");
   dispatch({ type: GET_PROFILE_DATA, payload: res.data });
+};
+
+export const getOneTeamData = id => async dispatch => {
+  const res = await axios.get(`/api/get_one_team_data/${id}`);
+  dispatch({ type: GET_ONE_TEAM_DATA, payload: res.data });
 };

@@ -1,0 +1,30 @@
+.team {
+    position: relative;
+    height: 100vh;
+
+    &__teamName {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+
+    &__teamAddress {
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.6rem;
+    }
+
+    &__teamFlag {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10rem;
+        height: 10rem;
+    }
+
+}

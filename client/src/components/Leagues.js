@@ -32,7 +32,7 @@ class Search extends React.Component {
   }
   renderContent() {
     return _.map(this.props.competition.current, val => {
-      const url = "/" + val.code.toLowerCase();
+      const url = "/league/" + val.code.toLowerCase();
       return (
         <Link key={val.id} to={{ pathname: url, state: { id: val.id } }}>
           <LeagueCard key={val.id} leagueName={val.name} />

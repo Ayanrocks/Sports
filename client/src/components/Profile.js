@@ -35,6 +35,7 @@ class Profile extends React.Component {
             </div>
             <div className="profile__buttons--delete">
               <a
+                href=""
                 onClick={e => {
                   e.preventDefault();
                   this.setState({ modal: true });
@@ -61,9 +62,7 @@ class Profile extends React.Component {
                 </a>
                 <div
                   className="modal__X"
-                  onClick={() => {
-                    this.setState({ modal: false });
-                  }}
+                  onClick={() => this.setState({ modal: false })}
                 >
                   <i className="fa fa-times fa-3x" aria-hidden="true" />
                 </div>

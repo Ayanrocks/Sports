@@ -6,7 +6,8 @@ module.exports = app => {
   });
 
   app.get("/profile/delete/:id", (req, res) => {
-    User.findOneAndRemove(req.params.id, (err) => {
+    req.logout();
+    User.findOneAndRemove(req.params.id, err => {
       if (err) {
         res.status(500).send(err);
       } else {

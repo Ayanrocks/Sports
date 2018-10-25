@@ -35,7 +35,9 @@ module.exports = app => {
   app.get("/api/get_team_data/:id", (req, res) => {
     request(
       {
-        url: `http://api.football-data.org/v2/competitions/${req.params.id}/teams`,
+        url: `http://api.football-data.org/v2/competitions/${
+          req.params.id
+        }/teams`,
         headers: {
           "X-Auth-Token": keys.footballAPIKey
         }
@@ -54,6 +56,22 @@ module.exports = app => {
         url: `http://api.football-data.org/v2/competitions/${
           req.params.id
         }/standings`,
+        headers: {
+          "X-Auth-Token": keys.footballAPIKey
+        }
+      },
+      (err, data) => {
+        var data = JSON.parse(data.body);
+        res.send(data);
+      }
+    );
+  });
+
+  //One team data
+  app.get("/api/get_one_team_data/:id", (req, res) => {
+    request(
+      {
+        url: `http://api.football-data.org/v2/teams/${req.params.id}`,
         headers: {
           "X-Auth-Token": keys.footballAPIKey
         }

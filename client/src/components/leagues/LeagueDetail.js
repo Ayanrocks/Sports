@@ -1,10 +1,11 @@
 import React from "react";
 import { css } from "react-emotion";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { HashLoader } from "react-spinners";
 import _ from "lodash";
 
-import { getLeagueData, getTeamData , getStandingsData} from "../../actions";
+import { getLeagueData, getTeamData, getStandingsData } from "../../actions";
 import AuthNavbar from "../AuthNavbar";
 
 const override = css`
@@ -34,9 +35,13 @@ class LeagueDetail extends React.Component {
   }
   teamList() {
     return _.map(this.props.teams.teams.teams, val => (
-      <div className="teams__cards" key={val.id}>
+      <Link
+        to={{ pathname: `/team/${val.id}`, state: { id: val.id } }}
+        className="teams__cards"
+        key={val.id}
+      >
         {val.name}
-      </div>
+      </Link>
     ));
   }
   renderContent() {
@@ -58,12 +63,8 @@ class LeagueDetail extends React.Component {
               </h3>
             </div>
             <div className="leagueDetail__card">
-              <h3 className="league__heading">
-                Standings
-              </h3>
-              <div className="league__standings">
-
-              </div>
+              <h3 className="league__heading">Standings</h3>
+              <div className="league__standings" />
             </div>
             <div className="league__teamCard">
               <div className="league__teams">
