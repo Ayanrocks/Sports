@@ -15,4 +15,8 @@ module.exports = app => {
       }
     });
   });
+
+  app.post("/contact/data", (req, res) => {
+    res.status(500).send();
+  });
 };

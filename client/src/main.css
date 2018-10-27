@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:200,400,600,700|Lato:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:200,400|Lato:100,300");
 @keyframes arrowMove {
   0% {
     opacity: 0;
@@ -34,6 +34,17 @@ body {
   /* Code for Firefox */
   color: red;
   background: yellow; }
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  transition: background-color 5000s ease-in-out 0s; }
 
 ::selection {
   color: white;
@@ -663,19 +674,99 @@ nav {
     transform: translateY(-50%);
     font-size: 1.6rem; }
 
-.contact {
-  margin: 0 auto;
-  transform: translateX(-50%);
-  padding: 8rem;
+.contact__heading {
+  text-align: center;
+  font-size: 5.2rem;
+  margin: 5rem auto;
+  font-weight: 400; }
+
+.contact__content {
+  text-align: center;
+  font-size: 2.2rem; }
+
+.contact__error {
+  background-color: #f00;
+  width: 80%;
+  margin: 5rem auto;
+  padding: 1rem;
+  letter-spacing: 2px;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 2rem; }
+
+.contact__box {
+  text-align: center;
+  margin: 8rem;
+  padding: 4rem;
+  border: 1px solid rgba(233, 233, 233, 0.7);
+  box-shadow: 0 1px 2px #e2e2e2; }
+
+.contact__form__element {
+  margin: 4rem; }
+  .contact__form__element label {
+    font-size: 2rem; }
+  .contact__form__element input {
+    font-family: 'Josefin Sans';
+    font-size: 3rem;
+    font-weight: 200;
+    width: 80%;
+    height: 5rem;
+    margin-left: 5rem;
+    border: none;
+    background-color: #fff;
+    border-bottom: 0.5px solid #c3c3c3;
+    outline-color: #fff;
+    color: #161616; }
+
+.contact__submit {
+  cursor: pointer;
+  font-family: 'Josefin Sans';
   width: 40%;
-  height: 40%;
-  border: 1px solid rgba(241, 241, 241, 0.8);
-  box-shadow: 1px 2px 4px rgba(240, 240, 240, 0.8);
-  font-family: 'Lato'; }
-  .contact__heading {
-    font-family: inherit;
-    margin: 5rem auto;
-    font-weight: 400; }
+  padding: 1rem 2rem;
+  color: #000;
+  letter-spacing: 2px;
+  font-size: 2.4rem;
+  background-color: white;
+  border: none;
+  border: 1px solid #008f70;
+  border-radius: 4px;
+  outline-color: #fff;
+  transition: all 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955); }
+
+.contact__submit:hover {
+  color: #fff;
+  background-color: #008f70; }
+
+textarea {
+  font-family: 'Josefin Sans';
+  font-size: 3rem;
+  font-weight: 200;
+  width: 80%;
+  height: 30rem;
+  resize: none;
+  margin-left: 3rem;
+  border: none;
+  background-color: #fff;
+  border-bottom: 0.5px solid #c3c3c3;
+  outline-color: #fff;
+  color: #161616;
+  vertical-align: top; }
+
+.back__arrow {
+  font-size: 4rem;
+  position: absolute;
+  top: 5%;
+  left: 5%; }
+
+.yellow {
+  background-color: #ffbb00 !important; }
+
+.green {
+  background-color: #0f0 !important; }
+
+.red {
+  background-color: #f00 !important; }
 
 .auth-cover {
   background-color: #ff3333;
