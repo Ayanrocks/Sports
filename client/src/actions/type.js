@@ -5,3 +5,6 @@ export const GET_STANDINGS_DATA = "GET_STANDINGS_DATA";
 export const GET_ONE_TEAM_DATA = "GET_ONE_TEAM_DATA";
 
 export const GET_PROFILE_DATA = "GET_PROFILE_DATA";
+
+
+export const GET_VIDEO_DATA = "GET_VIDEO_DATA";

@@ -9,7 +9,7 @@ import Auth from "./Auth";
 import Dashboard from "./Dashboard";
 import Leagues from "./Leagues";
 import MyTeams from "./MyTeams";
-import News from "./News";
+import Videos from "./Videos";
 import Profile from "./Profile";
 
 // Leagues
@@ -31,7 +31,7 @@ export default class App extends React.Component {
               <Route path="/dashboard" component={Dashboard} />
               <Route path="/search" component={Leagues} />
               <Route path="/myteams" component={MyTeams} />
-              <Route path="/news" component={News} />
+              <Route path="/news" component={Videos} />
               <Route path="/profile" component={Profile} />
               <Route path="/league/:name" component={LeagueDetail} />
               <Route path="/team/:teamid" component={TeamDetail} />
