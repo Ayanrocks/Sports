@@ -54,6 +54,10 @@ h2 {
   font-family: 'Josefin Sans';
   font-size: 3.2rem; }
 
+h5 {
+  font-weight: 400;
+  margin: 1rem; }
+
 header {
   height: 100vh;
   position: relative;
@@ -79,9 +83,8 @@ a:visited {
   margin-left: 10rem; }
 
 .row {
-  width: 80%;
-  margin: 0 auto;
-  overflow: hidden; }
+  width: 90%;
+  margin: 0 auto; }
 
 .auth {
   height: 100vh;
@@ -119,7 +122,22 @@ a:visited {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2.8rem; }
+  font-size: 2.8rem;
+  text-align: center;
+  line-height: 5rem; }
+
+.flex--sa {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; }
+
+.flex--dn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; }
 
 .icon-white {
   color: #fff; }
@@ -384,65 +402,6 @@ nav {
     .facebook-login:hover::before, .facebook-login:hover::after {
       height: 100%; }
 
-.card {
-  margin: 10rem auto;
-  width: 50%;
-  padding: 5rem;
-  background-color: #fff;
-  box-shadow: 0px 0 10px #eee;
-  border-radius: 5px; }
-  .card__heading {
-    font-size: 2.5rem;
-    text-align: center;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    margin-bottom: 2rem; }
-  .card h5 {
-    color: #444; }
-  .card h3 {
-    color: #999; }
-  .card__content {
-    display: flex; }
-    .card__content .card__left {
-      margin: 2rem; }
-      .card__content .card__left__heading {
-        font-size: 2.4rem;
-        text-align: center; }
-      .card__content .card__left__img {
-        margin: 4rem 0;
-        padding: 0.5rem;
-        width: 30rem;
-        height: 22rem;
-        box-shadow: 0px 3px 5px #eee; }
-        .card__content .card__left__img img {
-          width: 100%; }
-    .card__content .card__middle {
-      width: calc(860px/3);
-      position: relative; }
-      .card__content .card__middle .vs {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2.1rem;
-        border-radius: 50rem;
-        box-shadow: 0px 0px 5px #ddd;
-        color: #444;
-        padding: 2rem; }
-    .card__content .card__right {
-      margin: 2rem; }
-      .card__content .card__right__heading {
-        font-size: 2.4rem;
-        text-align: center; }
-      .card__content .card__right__img {
-        margin: 4rem 0;
-        padding: 0.5rem;
-        width: 30rem;
-        height: 22rem;
-        box-shadow: 0px 3px 5px #eee; }
-        .card__content .card__right__img img {
-          width: 100%; }
-
 .leagueCard {
   margin: 5rem;
   padding: 2rem;
@@ -454,16 +413,45 @@ nav {
     font-weight: 300; }
 
 .sweet-loading {
-  position: relative;
-  height: 100%;
-  width: 95%;
-  margin: 0 0 0 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 90%;
+  width: 100%;
   background-color: #fff;
   z-index: 999; }
   .sweet-loading--stop {
     opacity: 0;
     visibility: hidden;
     z-index: -1; }
+
+.card__container {
+  font-family: 'Lato';
+  font-size: 1.9rem;
+  margin: 5rem auto;
+  width: 75%;
+  padding: 2rem;
+  border: 1px solid rgba(231, 231, 231, 0.904);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px #eee; }
+
+.card__heading {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 400;
+  display: block;
+  margin: 0 auto; }
+
+.card__content {
+  padding: 2rem; }
+
+.card--small {
+  padding: 1rem;
+  margin: 5rem;
+  border: 1px solid rgba(231, 231, 231, 0.804);
+  border-radius: 4px;
+  cursor: pointer;
+  color: #000; }
 
 .home-title__heading {
   position: absolute;
@@ -805,86 +793,72 @@ textarea {
   transform: translateX(60%) scaleX(1.2); }
 
 .league {
-  position: relative;
   font-size: 2rem;
   height: 100vh;
   font-family: 'Lato', sans-serif; }
   .league__heading {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    text-align: center;
+    margin: 10rem;
     letter-spacing: 4px;
     font-weight: 300; }
-  .league__container {
-    position: absolute;
+  .league__content {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 10rem;
-    width: 90%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
+    justify-content: space-evenly;
+    width: 100%; }
   .league__error {
     font-size: 2.9rem;
+    font-weight: 300; }
+
+.leagueDetail {
+  font-size: 2rem;
+  height: 100vh;
+  font-family: 'Lato'; }
+  .leagueDetail .league__country {
     font-weight: 300;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-
-.leagueDetail .league__country {
-  font-weight: 300;
-  font-size: 2.6rem; }
-
-.leagueDetail .league__season {
-  font-weight: 300;
-  font-size: 2.6rem; }
-
-.leagueDetail .league__teamCard {
-  position: relative;
-  top: 40%;
-  margin: 0 auto;
-  width: 75%;
-  padding: 2rem;
-  border: 1px solid rgba(231, 231, 231, 0.904);
-  border-radius: 4px;
-  box-shadow: 0 2px 4px #eee;
-  display: flex;
-  justify-content: space-around;
-  align-items: center; }
-  .leagueDetail .league__teamCard .league__teams {
-    flex: 0 1 100%; }
-    .leagueDetail .league__teamCard .league__teams--heading {
-      text-align: center;
-      font-size: 2.4rem;
-      font-weight: 300; }
-    .leagueDetail .league__teamCard .league__teams--list {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      align-items: center; }
-      .leagueDetail .league__teamCard .league__teams--list .teams__cards {
-        padding: 1rem;
-        margin: 2rem;
-        border: 1px solid rgba(231, 231, 231, 0.804);
-        border-radius: 4px;
-        cursor: pointer;
-        color: #000; }
-
-.leagueDetail__card {
-  position: relative;
-  top: 30%;
-  margin: 0 auto;
-  width: 75%;
-  padding: 2rem;
-  border: 1px solid rgba(231, 231, 231, 0.904);
-  border-radius: 4px;
-  box-shadow: 0 2px 4px #eee;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 5rem auto; }
+    font-size: 2.6rem; }
+  .leagueDetail .league__season {
+    font-weight: 300;
+    font-size: 2.6rem; }
+  .leagueDetail .league__teamCard {
+    margin: 5rem auto;
+    width: 75%;
+    padding: 2rem;
+    border: 1px solid rgba(231, 231, 231, 0.904);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .leagueDetail .league__teamCard .league__teams {
+      flex: 0 1 100%; }
+      .leagueDetail .league__teamCard .league__teams--heading {
+        text-align: center;
+        font-size: 2.4rem;
+        font-weight: 300; }
+      .leagueDetail .league__teamCard .league__teams--list {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center; }
+        .leagueDetail .league__teamCard .league__teams--list .teams__cards {
+          padding: 1rem;
+          margin: 2rem;
+          border: 1px solid rgba(231, 231, 231, 0.804);
+          border-radius: 4px;
+          cursor: pointer;
+          color: #000; }
+  .leagueDetail__card {
+    margin: 0 auto;
+    width: 75%;
+    padding: 2rem;
+    border: 1px solid rgba(231, 231, 231, 0.904);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px #eee;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 5rem auto; }
 
 .profile__content {
   position: absolute;
@@ -946,24 +920,17 @@ textarea {
       -moz-outline-radius: 100px; }
 
 .team {
-  position: relative;
   height: 100vh; }
   .team__teamName {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%); }
+    text-align: center;
+    margin: 5rem auto; }
   .team__teamAddress {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1.6rem; }
+    margin: 0 auto;
+    font-size: 1.6rem;
+    text-align: center; }
   .team__teamFlag {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 5rem auto;
+    display: block;
     width: 10rem;
     height: 10rem; }
 

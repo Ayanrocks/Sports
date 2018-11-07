@@ -11,10 +11,9 @@ import AuthNavbar from "../AuthNavbar";
 const override = css`
   display: block;
   position: absolute;
-  top: 40%;
-  left: 40%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  margin: 0 auto;
 `;
 
 class LeagueDetail extends React.Component {
@@ -24,10 +23,10 @@ class LeagueDetail extends React.Component {
       loading: true
     };
   }
-  async componentDidMount(prevProps) {
-    if (this.props.location.state) {
-      await this.props.getLeagueData(this.props.location.state.id);
-      await this.props.getTeamData(this.props.location.state.id);
+  async componentDidMount() {
+    if (this.props) {
+      await this.props.getLeagueData(this.props.match.params.id);
+      await this.props.getTeamData(this.props.match.params.id);
       await this.props.getStandingsData(this.props.league.league.id);
       this.setState({ loading: false });
     }
@@ -36,7 +35,7 @@ class LeagueDetail extends React.Component {
   teamList() {
     return _.map(this.props.teams.teams.teams, val => (
       <Link
-        to={{ pathname: `/team/${val.id}`, state: { id: val.id } }}
+        to={`/team/${val.id}`}
         className="teams__cards"
         key={val.id}
       >
@@ -49,9 +48,11 @@ class LeagueDetail extends React.Component {
       if (this.props.league.league.name !== undefined) {
         return (
           <div className="league">
-            <h1 className="league__heading">
-              {this.props.league.league.name} - {this.props.match.params.name}
-            </h1>
+            <div className="league__heading__container">
+              <h1 className="league__heading">
+                {this.props.league.league.name} - {this.props.league.league.code}
+              </h1>
+            </div>
             <div className="leagueDetail__card">
               <h3 className="league__country">
                 Country of Origin - {this.props.league.league.area.name}

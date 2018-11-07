@@ -11,10 +11,9 @@ import { HashLoader } from "react-spinners";
 const override = css`
   display: block;
   position: absolute;
-  top: 40%;
-  left: 40%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  margin: 0 auto;
 `;
 
 class Search extends React.Component {
@@ -28,13 +27,12 @@ class Search extends React.Component {
   async componentDidMount() {
     await this.props.getCompetitionData();
     this.setState({ loading: false });
-
   }
   renderContent() {
     return _.map(this.props.competition.current, val => {
-      const url = "/league/" + val.code.toLowerCase();
+      const url = "/league/" + val.id;
       return (
-        <Link key={val.id} to={{ pathname: url, state: { id: val.id } }}>
+        <Link key={val.id} to={url}>
           <LeagueCard key={val.id} leagueName={val.name} />
         </Link>
       );
@@ -61,9 +59,16 @@ class Search extends React.Component {
         </div>
 
         <AuthNavbar />
-
-        <h1 className="league__heading">Available Leagues</h1>
-        <div className="league__container">{this.renderContent()}</div>
+        <div className="container">
+          <div className="row">
+            <div className="league__heading__container">
+              <h1 className="league__heading">Available Leagues</h1>
+            </div>
+            <div className="league__container">
+              <div className="league__content">{this.renderContent()}</div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

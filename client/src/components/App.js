@@ -33,7 +33,8 @@ export default class App extends React.Component {
               <Route path="/myteams" component={MyTeams} />
               <Route path="/news" component={Videos} />
               <Route path="/profile" component={Profile} />
-              <Route path="/league/:name" component={LeagueDetail} />
+              
+              <Route path="/league/:id" component={LeagueDetail} />
               <Route path="/team/:teamid" component={TeamDetail} />
             </Switch>
           </BrowserRouter>

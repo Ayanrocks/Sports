@@ -1,28 +1,21 @@
 .team {
-    position: relative;
     height: 100vh;
 
     &__teamName {
-        position: absolute;
-        top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
+        text-align: center;
+        margin: 5rem auto;
 
     }
 
     &__teamAddress {
-        position: absolute;
-        top: 15%;
-        left: 50%;
-        transform: translateX(-50%);
+        margin: 0 auto;
         font-size: 1.6rem;
+        text-align: center;
     }
 
     &__teamFlag {
-        position: absolute;
-        top: 25%;
-        left: 50%;
-        transform: translateX(-50%);
+        margin: 5rem auto;
+        display: block;
         width: 10rem;
         height: 10rem;
     }

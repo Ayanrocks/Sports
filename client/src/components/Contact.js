@@ -140,7 +140,7 @@ class Contact extends React.Component {
             </Link>{" "}
           </div>{" "}
           <h1 className="contact__heading">
-            Hey!We are glad you decided to Contact Us{" "}
+            Hey! We are glad you decided to Contact Us{" "}
           </h1>{" "}
           <p className="contact__content">
             If you have any Query, Don 't Hesitate to write to us <br />

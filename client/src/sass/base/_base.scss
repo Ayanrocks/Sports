@@ -48,6 +48,11 @@ h2 {
     font-size: 3.2rem;
 }
 
+h5 {
+    font-weight: 400;
+    margin: 1rem;
+}
+
 header {
     height: 100vh;
     position: relative;
@@ -78,10 +83,10 @@ a:visited {
 }
 
 .row {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     // height: 100vh;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .auth {
@@ -130,4 +135,21 @@ a:visited {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2.8rem;
+    text-align: center;
+    line-height: 5rem;
+}
+
+.flex--sa {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flex--dn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
