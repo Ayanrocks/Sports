@@ -12,14 +12,15 @@ import MyTeams from "./MyTeams";
 import Videos from "./Videos";
 import Profile from "./Profile";
 
-// Leagues
-import LeagueDetail from "./leagues/LeagueDetail";
-import TeamDetail from "./leagues/TeamDetail.js";
+// Detaiils
+import LeagueDetail from "./details/LeagueDetail";
+import TeamDetail from "./details/TeamDetail.js";
+import SquadDetail from './details/SquadDetail';
+
 
 export default class App extends React.Component {
   render() {
-    return (
-      <div>
+    return <div>
         <Online>
           <BrowserRouter>
             <Switch>
@@ -33,18 +34,19 @@ export default class App extends React.Component {
               <Route path="/myteams" component={MyTeams} />
               <Route path="/news" component={Videos} />
               <Route path="/profile" component={Profile} />
-              
+
               <Route path="/league/:id" component={LeagueDetail} />
               <Route path="/team/:teamid" component={TeamDetail} />
+              <Route path="/squad/:squadid" component={SquadDetail} />
             </Switch>
           </BrowserRouter>
         </Online>
         <Offline>
           <h1 className="offline__heading">
-            You're Offline. Please Connect to the Internet to use this App :)
+            You're Offline. Please Connect to the Internet to use this App
+            :)
           </h1>
         </Offline>
-      </div>
-    );
+      </div>;
   }
 }

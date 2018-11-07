@@ -83,5 +83,20 @@ module.exports = app => {
     );
   });
 
+  app.get("/api/get_squad_data/:id", (req, res) => {
+    request(
+      {
+        url: `http://api.football-data.org/v2/players/${req.params.id}`,
+        headers: {
+          "X-Auth-Token": keys.footballAPIKey
+        }
+      },
+      (err, data) => {
+        var data = JSON.parse(data.body);
+        res.send(data);
+      }
+    );
+  });
+
 
 };

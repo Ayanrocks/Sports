@@ -6,7 +6,8 @@ import {
   GET_STANDINGS_DATA,
   GET_PROFILE_DATA,
   GET_ONE_TEAM_DATA,
-  GET_VIDEO_DATA
+  GET_VIDEO_DATA,
+  GET_SQUAD_DATA
 } from "./type";
 
 //! ----------------Functions---------------
@@ -116,7 +117,6 @@ export const getOneTeamData = id => async dispatch => {
   dispatch({ type: GET_ONE_TEAM_DATA, payload: res.data });
 };
 
-
 export const getVideos = () => async dispatch => {
   const res = await axios.get(
     "https://www.googleapis.com/youtube/v3/subscriptions",
@@ -125,10 +125,14 @@ export const getVideos = () => async dispatch => {
         key: "AIzaSyDXp40a7hHNVrd2kE2yqjE5a1JTUEqjYtU",
         part: "snippet",
         // maxResults: 5,
-        channelId: "UCUrlukrJPwtzwiwTm_Va7sg",
+        channelId: "UCUrlukrJPwtzwiwTm_Va7sg"
       }
     }
   );
-  dispatch({type: GET_VIDEO_DATA, payload: res.data});
+  dispatch({ type: GET_VIDEO_DATA, payload: res.data });
+};
 
-}
+export const getSquadData = id => async dispatch => {
+  const res = await axios.get(`/api/get_squad_data/${id}`);
+  dispatch({ type: GET_SQUAD_DATA, payload: res.data });
+};
