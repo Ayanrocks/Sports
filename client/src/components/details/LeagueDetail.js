@@ -34,11 +34,7 @@ class LeagueDetail extends React.Component {
   }
   teamList() {
     return _.map(this.props.teams.teams.teams, val => (
-      <Link
-        to={`/team/${val.id}`}
-        className="teams__cards"
-        key={val.id}
-      >
+      <Link to={`/team/${val.id}`} className="card--small box-shadow" key={val.id}>
         {val.name}
       </Link>
     ));
@@ -49,28 +45,33 @@ class LeagueDetail extends React.Component {
         return (
           <div className="league">
             <div className="league__heading__container">
-              <h1 className="league__heading">
-                {this.props.league.league.name} - {this.props.league.league.code}
+              <h1 className="heading">
+                {this.props.league.league.name} -{" "}
+                {this.props.league.league.code}
               </h1>
             </div>
-            <div className="leagueDetail__card">
-              <h3 className="league__country">
-                Country of Origin - {this.props.league.league.area.name}
-              </h3>
-              <h3 className="league__season">
-                Current Season:{" "}
-                {this.props.league.league.currentSeason.startDate} -{" "}
-                {this.props.league.league.currentSeason.endDate}
-              </h3>
+            <div className="card">
+              <div className="card__container flex--row">
+                <h3 className="league__country">
+                  Country of Origin - {this.props.league.league.area.name}
+                </h3>
+                <h3 className="league__season">
+                  Current Season:{" "}
+                  {this.props.league.league.currentSeason.startDate} -{" "}
+                  {this.props.league.league.currentSeason.endDate}
+                </h3>
+              </div>
             </div>
-            <div className="leagueDetail__card">
-              <h3 className="league__heading">Standings</h3>
-              <div className="league__standings" />
+            <div className="card">
+              <div className="card__container">
+                <h3 className="league__heading text-center">Standings</h3>
+                <div className="league__standings" />
+              </div>
             </div>
-            <div className="league__teamCard">
-              <div className="league__teams">
-                <h3 className="league__teams--heading">Teams</h3>
-                <div className="league__teams--list">{this.teamList()}</div>
+            <div className="card">
+              <div className="card__container flex--sa">
+                <h3 className="card__heading">Teams</h3>
+                <div className="flex--row">{this.teamList()}</div>
               </div>
             </div>
           </div>
@@ -78,8 +79,8 @@ class LeagueDetail extends React.Component {
       }
       if (this.props.league.league.message !== undefined) {
         return (
-          <h5 className="league__error">
-            {this.props.league.league.message} And refresh the page
+          <h5 className="api__error">
+            {this.props.league.league.message} and refresh the page
           </h5>
         );
       }
@@ -103,7 +104,9 @@ class LeagueDetail extends React.Component {
           />
         </div>
         <AuthNavbar />
-        {this.renderContent()}
+        <div className="container">
+          <div className="row">{this.renderContent()}</div>
+        </div>
       </div>
     );
   }

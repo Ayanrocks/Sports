@@ -32,7 +32,7 @@ class Search extends React.Component {
     return _.map(this.props.competition.current, val => {
       const url = "/league/" + val.id;
       return (
-        <Link key={val.id} to={url}>
+        <Link key={val.id} to={url} className="card">
           <LeagueCard key={val.id} leagueName={val.name} />
         </Link>
       );
@@ -62,10 +62,10 @@ class Search extends React.Component {
         <div className="container">
           <div className="row">
             <div className="league__heading__container">
-              <h1 className="league__heading">Available Leagues</h1>
+              <h1 className="heading text-center">Available Leagues</h1>
             </div>
             <div className="league__container">
-              <div className="league__content">{this.renderContent()}</div>
+              <div className="flex--sa">{this.renderContent()}</div>
             </div>
           </div>
         </div>

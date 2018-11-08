@@ -48,7 +48,10 @@ h2 {
     font-size: 3.2rem;
 }
 
-h5 {
+h3,
+h4,
+h5,
+h6 {
     font-weight: 400;
     margin: 1rem;
 }
@@ -68,19 +71,7 @@ a:visited {
     text-decoration: none;
 }
 
-.clearfix {
-    overflow: auto;
-}
 
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.container {
-    margin-left: 10rem;
-}
 
 .row {
     width: 90%;
@@ -95,59 +86,3 @@ a:visited {
     font-family: 'Josefin Sans';
 }
 
-//for Auth Section
-.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.hide {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.black-text {
-    color: #111 !important;
-}
-
-//------------xx------------------
-.dashboard {
-    height: 100vh;
-    position: relative;
-    font-family: 'Lato';
-}
-
-.heading {
-    font-family: 'Lato';
-    margin: 10rem auto;
-    text-align: center;
-    letter-spacing: 4px;
-    font-weight: 300;
-    font-size: 3.6rem;
-}
-
-
-.offline__heading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2.8rem;
-    text-align: center;
-    line-height: 5rem;
-}
-
-.flex--sa {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.flex--dn {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-}

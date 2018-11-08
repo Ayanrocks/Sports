@@ -1,106 +1,106 @@
-.league {
-    font-size: 2rem;
-    height: 100vh;
-    font-family: 'Lato', sans-serif;
+// .league {
+//     font-size: 2rem;
+//     height: 100vh;
+//     font-family: 'Lato', sans-serif;
 
-    &__heading {
+//     &__heading {
 
-        text-align: center;
-        margin: 10rem;
-        letter-spacing: 4px;
-        font-weight: 300;
-    }
-
-
-    &__content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        width: 100%;
-    }
-
-    &__error {
-        font-size: 2.9rem;
-        font-weight: 300;
-    }
-}
+//         text-align: center;
+//         margin: 10rem;
+//         letter-spacing: 4px;
+//         font-weight: 300;
+//     }
 
 
-.leagueDetail {
-    font-size: 2rem;
-    height: 100vh;
-    font-family: 'Lato';
+//     &__content {
+//         display: flex;
+//         flex-wrap: wrap;
+//         justify-content: space-evenly;
+//         width: 100%;
+//     }
 
-    .league {
-        &__country {
-            font-weight: 300;
-            font-size: 2.6rem;
-
-        }
-
-        &__season {
-            font-weight: 300;
-            font-size: 2.6rem;
-        }
-
-        &__teamCard {
-
-            margin: 5rem auto;
-            width: 75%;
-            padding: 2rem;
-            border: 1px solid rgba(231, 231, 231, 0.904);
-            border-radius: 4px;
-            box-shadow: 0 2px 4px #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            .league {
-                &__teams {
-                    flex: 0 1 100%;
-
-                    &--heading {
-                        text-align: center;
-                        font-size: 2.4rem;
-                        font-weight: 300;
-                    }
-
-                    &--list {
-                        display: flex;
-                        justify-content: space-around;
-                        flex-wrap: wrap;
-                        align-items: center;
-
-                        .teams__cards {
-                            padding: 1rem;
-                            margin: 2rem;
-                            border: 1px solid rgba(231, 231, 231, 0.804);
-                            border-radius: 4px;
-                            cursor: pointer;
-                            color: #000;
-                        }
-                    }
-
-                }
-
-            }
-        }
+//     &__error {
+//         font-size: 2.9rem;
+//         font-weight: 300;
+//     }
+// }
 
 
-    }
+// .leagueDetail {
+//     font-size: 2rem;
+//     height: 100vh;
+//     font-family: 'Lato';
 
-    &__card {
-        margin: 0 auto;
-        width: 75%;
-        padding: 2rem;
-        border: 1px solid rgba(231, 231, 231, 0.904);
-        border-radius: 4px;
-        box-shadow: 0 2px 4px #eee;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin: 5rem auto;
-    }
+//     .league {
+//         &__country {
+//             font-weight: 300;
+//             font-size: 2.6rem;
+
+//         }
+
+//         &__season {
+//             font-weight: 300;
+//             font-size: 2.6rem;
+//         }
+
+//         &__teamCard {
+
+//             margin: 5rem auto;
+//             width: 75%;
+//             padding: 2rem;
+//             border: 1px solid rgba(231, 231, 231, 0.904);
+//             border-radius: 4px;
+//             box-shadow: 0 2px 4px #eee;
+//             display: flex;
+//             justify-content: space-between;
+//             align-items: center;
+
+//             .league {
+//                 &__teams {
+//                     flex: 0 1 100%;
+
+//                     &--heading {
+//                         text-align: center;
+//                         font-size: 2.4rem;
+//                         font-weight: 300;
+//                     }
+
+//                     &--list {
+//                         display: flex;
+//                         justify-content: space-around;
+//                         flex-wrap: wrap;
+//                         align-items: center;
+
+//                         .teams__cards {
+//                             padding: 1rem;
+//                             margin: 2rem;
+//                             border: 1px solid rgba(231, 231, 231, 0.804);
+//                             border-radius: 4px;
+//                             cursor: pointer;
+//                             color: #000;
+//                         }
+//                     }
+
+//                 }
+
+//             }
+//         }
 
 
-}
+//     }
+
+//     &__card {
+//         margin: 0 auto;
+//         width: 75%;
+//         padding: 2rem;
+//         border: 1px solid rgba(231, 231, 231, 0.904);
+//         border-radius: 4px;
+//         box-shadow: 0 2px 4px #eee;
+//         display: flex;
+//         justify-content: space-around;
+//         align-items: center;
+//         margin: 5rem auto;
+//     }
+
+
+// }

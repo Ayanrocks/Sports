@@ -31,7 +31,7 @@ class TeamDetail extends React.Component {
   renderSquads() {
     return _.map(this.props.teamDetail.squad, val => {
       return (
-        <Link to={`/squad/${val.id}`} key={val.id} className="card--small">
+        <Link to={`/squad/${val.id}`} key={val.id} className="card--small box-shadow">
           {val.name}
         </Link>
       );

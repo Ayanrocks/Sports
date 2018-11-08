@@ -1,4 +1,83 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:200,400|Lato:100,300,400");
+.clearfix {
+  overflow: auto; }
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table; }
+
+.container {
+  margin-left: 10rem; }
+
+.active {
+  opacity: 1;
+  visibility: visible; }
+
+.hide {
+  opacity: 0;
+  visibility: hidden; }
+
+.black-text {
+  color: #111 !important; }
+
+.dashboard {
+  height: 100vh;
+  position: relative;
+  font-family: 'Lato'; }
+
+.heading {
+  font-family: 'Lato';
+  margin: 10rem auto;
+  text-align: center;
+  letter-spacing: 4px;
+  font-weight: 300;
+  font-size: 3.6rem; }
+
+.offline__heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.8rem;
+  text-align: center;
+  line-height: 5rem; }
+
+.flex--sa {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; }
+
+.flex--dn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; }
+
+.flex--row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; }
+
+.api__error {
+  text-align: center;
+  margin: 10rem auto;
+  font-size: 2.9rem;
+  font-weight: 300; }
+
+.text-center {
+  text-align: center; }
+
+.box-shadow {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); }
+
+.box-shadow:hover {
+  box-shadow: 0 0 14px #e2e2e2; }
+
 @keyframes arrowMove {
   0% {
     opacity: 0;
@@ -54,7 +133,10 @@ h2 {
   font-family: 'Josefin Sans';
   font-size: 3.2rem; }
 
-h5 {
+h3,
+h4,
+h5,
+h6 {
   font-weight: 400;
   margin: 1rem; }
 
@@ -71,17 +153,6 @@ a:link,
 a:visited {
   text-decoration: none; }
 
-.clearfix {
-  overflow: auto; }
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table; }
-
-.container {
-  margin-left: 10rem; }
-
 .row {
   width: 90%;
   margin: 0 auto; }
@@ -90,52 +161,6 @@ a:visited {
   height: 100vh;
   position: relative;
   font-family: 'Josefin Sans'; }
-
-.active {
-  opacity: 1;
-  visibility: visible; }
-
-.hide {
-  opacity: 0;
-  visibility: hidden; }
-
-.black-text {
-  color: #111 !important; }
-
-.dashboard {
-  height: 100vh;
-  position: relative;
-  font-family: 'Lato'; }
-
-.heading {
-  font-family: 'Lato';
-  margin: 10rem auto;
-  text-align: center;
-  letter-spacing: 4px;
-  font-weight: 300;
-  font-size: 3.6rem; }
-
-.offline__heading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2.8rem;
-  text-align: center;
-  line-height: 5rem; }
-
-.flex--sa {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap; }
-
-.flex--dn {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap; }
 
 .icon-white {
   color: #fff; }
@@ -444,7 +469,7 @@ nav {
   padding: 2rem; }
 
 .card--small {
-  padding: 1rem;
+  padding: 2rem;
   margin: 5rem;
   border: 1px solid rgba(231, 231, 231, 0.804);
   border-radius: 4px;
@@ -789,74 +814,6 @@ textarea {
 
 .login-active {
   transform: translateX(60%) scaleX(1.2); }
-
-.league {
-  font-size: 2rem;
-  height: 100vh;
-  font-family: 'Lato', sans-serif; }
-  .league__heading {
-    text-align: center;
-    margin: 10rem;
-    letter-spacing: 4px;
-    font-weight: 300; }
-  .league__content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 100%; }
-  .league__error {
-    font-size: 2.9rem;
-    font-weight: 300; }
-
-.leagueDetail {
-  font-size: 2rem;
-  height: 100vh;
-  font-family: 'Lato'; }
-  .leagueDetail .league__country {
-    font-weight: 300;
-    font-size: 2.6rem; }
-  .leagueDetail .league__season {
-    font-weight: 300;
-    font-size: 2.6rem; }
-  .leagueDetail .league__teamCard {
-    margin: 5rem auto;
-    width: 75%;
-    padding: 2rem;
-    border: 1px solid rgba(231, 231, 231, 0.904);
-    border-radius: 4px;
-    box-shadow: 0 2px 4px #eee;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-    .leagueDetail .league__teamCard .league__teams {
-      flex: 0 1 100%; }
-      .leagueDetail .league__teamCard .league__teams--heading {
-        text-align: center;
-        font-size: 2.4rem;
-        font-weight: 300; }
-      .leagueDetail .league__teamCard .league__teams--list {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        align-items: center; }
-        .leagueDetail .league__teamCard .league__teams--list .teams__cards {
-          padding: 1rem;
-          margin: 2rem;
-          border: 1px solid rgba(231, 231, 231, 0.804);
-          border-radius: 4px;
-          cursor: pointer;
-          color: #000; }
-  .leagueDetail__card {
-    margin: 0 auto;
-    width: 75%;
-    padding: 2rem;
-    border: 1px solid rgba(231, 231, 231, 0.904);
-    border-radius: 4px;
-    box-shadow: 0 2px 4px #eee;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 5rem auto; }
 
 .profile__content {
   position: absolute;
