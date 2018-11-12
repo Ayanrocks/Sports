@@ -1,15 +1,15 @@
-.sweet-loading{
+.sweet-loading {
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 90%;
-    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    margin-left: 10rem;
+
+}
+
+.loader {
+    position: fixed;
     background-color: #fff;
     z-index: 999;
-
-    &--stop{
-        opacity: 0;
-        visibility: hidden;
-        z-index: -1;
-    }
 }

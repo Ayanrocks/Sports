@@ -1,19 +1,33 @@
 import React from "react";
 import { connect } from "react-redux";
 import AuthNavbar from "./AuthNavbar";
+import { css } from "react-emotion";
+import { HashLoader } from "react-spinners";
 
 import { getProfileData } from "../actions";
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+`;
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
+      loading: true
     };
   }
   async componentDidMount() {
     await this.props.getProfileData();
     console.log(this.props);
+    this.setState(() => {
+      return {
+        ...this.state,
+        loading: false
+      };
+    });
   }
 
   renderContent() {
@@ -29,7 +43,7 @@ class Profile extends React.Component {
           <div className="profile__details__item">
             {this.props.profile.gender}
           </div>
-          <div className="profile__buttons clearfix">
+          <div className="profile__buttons">
             <div className="profile__buttons--logout">
               <a href="/logout">Logout</a>
             </div>
@@ -45,30 +59,6 @@ class Profile extends React.Component {
               </a>
             </div>
           </div>
-          {this.state.modal && (
-            <div className="modal">
-              <div className="modal__box">
-                <h1 className="modal__heading">Are You Sure?</h1>
-                <p className="modal__warning">
-                  Are you sure you want to delete your account? This action
-                  cannot be undone. To continue press the below button, or to
-                  cancel press the X mark above.
-                </p>
-                <a
-                  href={`/profile/delete/${this.props.profile._id}`}
-                  className="modal__button"
-                >
-                  Confirm Delete Account?
-                </a>
-                <div
-                  className="modal__X"
-                  onClick={() => this.setState({ modal: false })}
-                >
-                  <i className="fa fa-times fa-3x" aria-hidden="true" />
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       );
     }
@@ -77,26 +67,70 @@ class Profile extends React.Component {
     return (
       <section className="profile">
         <AuthNavbar />
-        {this.props.profile && (
-          <div className="profile__content">
-            <div className="profile__photo">
-              {this.props.profile.provider === "google" && (
-                <img
-                  src={this.props.profile.photo + "0"}
-                  alt="Profile"
-                  title="Profile photo"
-                />
-              )}
-              {this.props.profile.provider === "facebook" && (
-                <img
-                  src={`http://graph.facebook.com/${
-                    this.props.profile.facebookId
-                  }/picture?type=large`}
-                  alt="Profile"
-                />
-              )}
+        <div className="loader">
+          <div className="sweet-loading">
+            <HashLoader
+              className={override}
+              sizeUnit={"px"}
+              size={90}
+              color={"#E62314"}
+              loading={this.state.loading}
+            />
+          </div>
+        </div>
+
+        <div className="container">
+          <div className="row">
+            {this.props.profile && (
+              <div className="profile__content">
+                <div className="profile__photo">
+                  {this.props.profile.provider === "google" && (
+                    <img
+                      src={this.props.profile.photo + "0"}
+                      alt="Profile"
+                      title="Profile photo"
+                    />
+                  )}
+                  {this.props.profile.provider === "facebook" && (
+                    <img
+                      src={`http://graph.facebook.com/${
+                        this.props.profile.facebookId
+                      }/picture?type=large`}
+                      alt="Profile"
+                    />
+                  )}
+                </div>
+                {this.renderContent()}
+              </div>
+            )}
+          </div>
+        </div>
+        {this.state.modal && (
+          <div className="modal">
+            <div className="modal__box">
+              <div className="container">
+                <div className="row">
+                  <h1 className="modal__heading">Are You Sure?</h1>
+                  <p className="modal__warning">
+                    Are you sure you want to delete your account? This action
+                    cannot be undone. To continue press the below button, or to
+                    cancel press the X mark above.
+                  </p>
+                  <a
+                    href={`/profile/delete/${this.props.profile._id}`}
+                    className="modal__button"
+                  >
+                    Confirm Delete Account?
+                  </a>
+                </div>
+              </div>
+              <div
+                className="modal__X"
+                onClick={() => this.setState({ modal: false })}
+              >
+                <i className="fa fa-times fa-3x" aria-hidden="true" />
+              </div>
             </div>
-            {this.renderContent()}
           </div>
         )}
       </section>

@@ -10,10 +10,7 @@ import _ from "lodash";
 
 const override = css`
   display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 0 auto;
 `;
 
 class TeamDetail extends React.Component {
@@ -31,7 +28,11 @@ class TeamDetail extends React.Component {
   renderSquads() {
     return _.map(this.props.teamDetail.squad, val => {
       return (
-        <Link to={`/squad/${val.id}`} key={val.id} className="card--small box-shadow">
+        <Link
+          to={`/squad/${val.id}`}
+          key={val.id}
+          className="card--small box-shadow"
+        >
           {val.name}
         </Link>
       );
@@ -69,7 +70,7 @@ class TeamDetail extends React.Component {
         </div>
         <div className="card">
           <div className="card__container">
-            <h1 className="card__heading">Teams</h1>
+            <h1 className="card__heading">Squad</h1>
             <div className="flex--sa">{this.renderSquads()}</div>
           </div>
         </div>
@@ -80,13 +81,15 @@ class TeamDetail extends React.Component {
     return (
       <div>
         <AuthNavbar />
-        <HashLoader
-          className={override}
-          sizeUnit={"px"}
-          size={90}
-          color={"#E62314"}
-          loading={this.state.loading}
-        />
+        <div className="sweet-loading">
+          <HashLoader
+            className={override}
+            sizeUnit={"px"}
+            size={90}
+            color={"#E62314"}
+            loading={this.state.loading}
+          />
+        </div>
         <div className="team">
           <div className="container">
             <div className="row">

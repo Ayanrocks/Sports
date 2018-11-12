@@ -78,6 +78,9 @@
 .box-shadow:hover {
   box-shadow: 0 0 14px #e2e2e2; }
 
+.block-center {
+  margin: 0 auto; }
+
 @keyframes arrowMove {
   0% {
     opacity: 0;
@@ -239,23 +242,24 @@ nav {
 
 .modal {
   z-index: 999;
-  opacity: 0.95;
+  opacity: 0.97;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  background-color: #fff; }
+  left: 0; }
   .modal__box {
-    padding: 4rem;
+    padding: 5rem;
     position: absolute;
     top: 50%;
-    left: 10%;
+    left: 50%;
     transform: translate(-50%, -50%);
     background-color: #fcfcfc;
-    width: 40%; }
+    z-index: 999;
+    box-shadow: 1px 2px 5px #e6e6e6; }
   .modal__heading {
+    text-align: center;
     font-weight: 100;
     font-size: 2.8rem; }
   .modal__warning {
@@ -263,7 +267,10 @@ nav {
     margin: 10rem; }
   .modal__button {
     cursor: pointer;
-    margin-top: 4rem;
+    margin: 4rem auto;
+    width: 40%;
+    display: block;
+    text-align: center;
     font-size: 2.2rem;
     padding: 2rem 4rem;
     border: none;
@@ -275,7 +282,7 @@ nav {
     cursor: pointer;
     position: absolute;
     top: 10%;
-    left: 90%; }
+    left: 95%; }
 
 .google-signup {
   position: absolute;
@@ -437,16 +444,16 @@ nav {
 
 .sweet-loading {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 90%;
-  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  margin-left: 10rem; }
+
+.loader {
+  position: fixed;
   background-color: #fff;
   z-index: 999; }
-  .sweet-loading--stop {
-    opacity: 0;
-    visibility: hidden;
-    z-index: -1; }
 
 .card__container {
   font-family: 'Lato';
@@ -816,10 +823,7 @@ textarea {
   transform: translateX(60%) scaleX(1.2); }
 
 .profile__content {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%); }
+  margin: 10rem auto; }
 
 .profile__photo {
   margin: 0 auto;
@@ -844,10 +848,12 @@ textarea {
     text-transform: capitalize; }
 
 .profile__buttons {
-  margin-top: 5rem; }
+  display: flex;
+  margin: 5rem auto;
+  width: 50%;
+  justify-content: space-around;
+  flex-wrap: wrap; }
   .profile__buttons--logout {
-    float: left;
-    margin: 5rem;
     cursor: pointer; }
     .profile__buttons--logout a {
       font-size: 2.2rem;
@@ -861,8 +867,6 @@ textarea {
       color: #fff;
       background-color: red; }
   .profile__buttons--delete {
-    float: right;
-    margin: 5rem;
     cursor: pointer; }
     .profile__buttons--delete a {
       font-size: 2.2rem;

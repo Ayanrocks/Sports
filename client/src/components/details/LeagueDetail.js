@@ -10,10 +10,8 @@ import AuthNavbar from "../AuthNavbar";
 
 const override = css`
   display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  border-color: red;
 `;
 
 class LeagueDetail extends React.Component {
@@ -32,10 +30,51 @@ class LeagueDetail extends React.Component {
     }
     console.log(this.props);
   }
+
+  previousWinner() {
+    return _.map(this.props.league.league.seasons, val => {
+      if (val.winner !== null) {
+        return (
+          <Link
+            to={`/team/${val.winner.id}`}
+            className="card--small box-shadow text-center"
+            key={val.id}
+          >
+            {val.winner.crestUrl && (
+              <img
+                src={val.winner.crestUrl}
+                alt={val.winner.name}
+                height="100"
+                width="100"
+                className="text-center"
+              />
+            )}
+            <h3 className="text-center">{val.winner.name}</h3>
+            <h3 className="text-center">
+              {val.startDate.substring(0, val.startDate.indexOf("-"))}
+            </h3>
+          </Link>
+        );
+      }
+    });
+  }
   teamList() {
     return _.map(this.props.teams.teams.teams, val => (
-      <Link to={`/team/${val.id}`} className="card--small box-shadow" key={val.id}>
-        {val.name}
+      <Link
+        to={`/team/${val.id}`}
+        className="card--small box-shadow flex--dn"
+        key={val.id}
+      >
+        {val.crestUrl && (
+          <img
+            src={val.crestUrl}
+            alt={val.name}
+            height="100"
+            width="100"
+            className="block-center"
+          />
+        )}
+        <h3 className="text-center">{val.name}</h3>
       </Link>
     ));
   }
@@ -64,8 +103,12 @@ class LeagueDetail extends React.Component {
             </div>
             <div className="card">
               <div className="card__container">
-                <h3 className="league__heading text-center">Standings</h3>
-                <div className="league__standings" />
+                <h3 className="league__heading text-center">
+                  Previous Winner{" "}
+                </h3>
+                <div className="league__standings flex--sa">
+                  {this.previousWinner()}
+                </div>
               </div>
             </div>
             <div className="card">
@@ -90,11 +133,8 @@ class LeagueDetail extends React.Component {
   render() {
     return (
       <div className="leagueDetail">
-        <div
-          className={
-            this.state.loading ? "sweet-loading" : "sweet-loading--stop"
-          }
-        >
+        <AuthNavbar />
+        <div className="sweet-loading">
           <HashLoader
             className={override}
             sizeUnit={"px"}
@@ -103,7 +143,7 @@ class LeagueDetail extends React.Component {
             loading={this.state.loading}
           />
         </div>
-        <AuthNavbar />
+
         <div className="container">
           <div className="row">{this.renderContent()}</div>
         </div>

@@ -1,9 +1,6 @@
 .profile {
     &__content {
-        position: absolute;
-        top: 10%;
-        left: 50%;
-        transform: translateX(-50%);
+        margin: 10rem auto;
     }
 
     &__photo {
@@ -39,11 +36,12 @@
     }
 
     &__buttons {
-        margin-top: 5rem;
-
+        display: flex;
+        margin: 5rem auto;
+        width: 50%;
+        justify-content: space-around;
+        flex-wrap: wrap;
         &--logout {
-            float: left;
-            margin: 5rem;
             cursor: pointer;
 
             a {
@@ -63,8 +61,6 @@
         }
 
         &--delete {
-            float: right;
-            margin: 5rem;
             cursor: pointer;
 
             a {
