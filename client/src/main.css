@@ -63,6 +63,13 @@
   align-items: center;
   flex-wrap: wrap; }
 
+.flex--start {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center; }
+
 .api__error {
   text-align: center;
   margin: 10rem auto;
@@ -80,6 +87,13 @@
 
 .block-center {
   margin: 0 auto; }
+
+.margin--sm {
+  margin: 2rem; }
+
+.active-option {
+  color: #fff !important;
+  background-color: #f00; }
 
 @keyframes arrowMove {
   0% {
@@ -480,6 +494,15 @@ nav {
   margin: 5rem;
   border: 1px solid rgba(231, 231, 231, 0.804);
   border-radius: 4px;
+  cursor: pointer;
+  color: #000; }
+
+.card--round {
+  font-size: 1.7rem;
+  padding: 2rem;
+  margin: 2rem;
+  border: 1px solid rgba(231, 231, 231, 0.804);
+  border-radius: 50px;
   cursor: pointer;
   color: #000; }
 

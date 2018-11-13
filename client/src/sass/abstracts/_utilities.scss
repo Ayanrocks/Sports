@@ -77,6 +77,14 @@
     flex-wrap: wrap;
 }
 
+.flex--start{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
 .api__error {
     text-align: center;
     margin: 10rem auto;
@@ -98,4 +106,13 @@
 
 .block-center {
     margin: 0 auto;
+}
+
+.margin--sm{
+    margin: 2rem;
+}
+
+.active-option {
+    color: #fff !important;
+    background-color: #f00;
 }

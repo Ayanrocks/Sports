@@ -8,25 +8,42 @@ class Videos extends React.Component {
   constructor(props) {
     super(props);
     this.getVideo = this.getVideo.bind(this);
+    this.selectOption = this.selectOption.bind(this);
+
+    this.state = {
+      active: true,
+      playing: false
+    };
   }
   async componentDidMount() {
-    await this.props.getVideos();
+    await this.props.getVideos("football league");
     console.log(this.props);
+  }
+
+  async selectOption(name) {
+    const value = name;
+    console.log(value);
+    this.setState(() => ({
+      ...this.state,
+      active: value
+    }));
+    await this.props.getVideos(value);
   }
 
   getVideo() {
     if (this.props.videos) {
       return _.map(this.props.videos.items, val => {
         return (
-          <div className="videos__results--item">
+          <div className="videos__results--item" key={val.etag}>
             <iframe
-              width="560"
+              width="460"
               height="315"
-              src={`https://www.youtube.com/embed/${val.id}`}
+              src={`https://www.youtube.com/embed/${val.id.videoId}`}
               frameBorder="0"
               allow="autoplay; encrypted-media"
               allowFullScreen
               key={val.etag}
+              className="margin--sm"
             />
           </div>
         );
@@ -34,21 +51,61 @@ class Videos extends React.Component {
     }
   }
   render() {
-    return (
-      <div>
+    return <div>
         <AuthNavbar />
         <div className="container">
           <div className="row">
             <div className="videos">
-              {/* <div className="videos__searchbar">
-                <input type="text" />
-              </div> */}
-              <div className="videos__results">{this.getVideo()}</div>
+              <div className="video__trending">
+                <div className="card">
+                  <div className="card__content flex--start">
+                    <div className={this.state.active === "Série A" ? "card--round active-option" : "card--round"} onClick={() => this.selectOption("Série A")}>
+                      <h2 className="card__heading">Série A</h2>
+                    </div>
+                    <div className={this.state.active === "Premier League" ? "card--round active-option" : "card--round"} onClick={() => this.selectOption("Premier League")}>
+                      <h2 className="card__heading">Premier League</h2>
+                    </div>
+                    <div className={this.state.active === "European Championship" ? "card--round active-option" : "card--round"} onClick={() => this.selectOption("European Championship")}>
+                      <h2 className="card__heading">
+                        European Championship
+                      </h2>
+                    </div>
+                    <div className={this.state.active === "Championship" ? "card--round active-option" : "card--round"} onClick={() => this.selectOption("Championship")}>
+                      <h2 className="card__heading">Championship</h2>
+                    </div>
+                    <div className={this.state.active === "UEFA Champions League" ? "card--round active-option" : "card--round"} onClick={() => this.selectOption("UEFA Champions League")}>
+                      <h2 className="card__heading">
+                        UEFA Champions League
+                      </h2>
+                    </div>
+                    <div className={this.state.active === "Eredivisie" ? "card--round active-option" : "card--round"} onClick={() => this.selectOption("Eredivisie")}>
+                      <h2 className="card__heading">Eredivisie</h2>
+                    </div>
+                    <div className={this.state.active === "Ligue 1" ? "card--round active-option" : "card--round"} onClick={() => this.selectOption("Ligue 1")}>
+                      <h2 className="card__heading">Ligue 1</h2>
+                    </div>
+                    <div className={this.state.active === "Bundesliga" ? "card--round active-option" : "card--round"} onClick={() => this.selectOption("Bundesliga")}>
+                      <h2 className="card__heading">Bundesliga</h2>
+                    </div>
+                    <div className={this.state.active === "Primeira Liga" ? "card--round active-option" : "card--round"} onClick={() => this.selectOption("Primeira Liga")}>
+                      <h2 className="card__heading">Primeira Liga</h2>
+                    </div>
+                    <div className={this.state.active === "Primera Division" ? "card--round active-option" : "card--round"} onClick={() => this.selectOption("Primera Division")}>
+                      <h2 className="card__heading">Primera Division</h2>
+                    </div>
+                    <div className={this.state.active === "FIFA World Cup" ? "card--round active-option" : "card--round"} onClick={() => this.selectOption("FIFA World Cup")}>
+                      <h2 className="card__heading">FIFA World Cup</h2>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="videos__results flex--start">
+                {this.getVideo()}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    );
+      </div>;
   }
 }
 function mapStateToProps({ videos }) {

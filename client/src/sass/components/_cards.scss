@@ -30,5 +30,15 @@
           cursor: pointer;
           color: #000;
     }
+
+    &--round {
+        font-size: 1.7rem;
+        padding: 2rem;
+        margin: 2rem;
+        border: 1px solid rgba(231, 231, 231, 0.804);
+        border-radius: 50px;
+        cursor: pointer;
+        color: #000;
+    }
 }
 

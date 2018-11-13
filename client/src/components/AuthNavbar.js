@@ -34,13 +34,13 @@ class AuthNavbar extends React.Component {
 
             className="nav-item"
           >
-            Search
+            Explore
           </NavLink>
-          <NavLink to="/myteams" value="myteams" className="nav-item">
+          <NavLink to="/myteams" className="nav-item">
             My Teams
           </NavLink>
           <NavLink to="/news" className="nav-item">
-            News
+            Videos
           </NavLink>
           <NavLink to="/profile" className="nav-item">
             Profile

@@ -117,18 +117,17 @@ export const getOneTeamData = id => async dispatch => {
   dispatch({ type: GET_ONE_TEAM_DATA, payload: res.data });
 };
 
-export const getVideos = () => async dispatch => {
-  const res = await axios.get(
-    "https://www.googleapis.com/youtube/v3/subscriptions",
-    {
-      params: {
-        key: "AIzaSyDXp40a7hHNVrd2kE2yqjE5a1JTUEqjYtU",
-        part: "snippet",
-        // maxResults: 5,
-        channelId: "UCUrlukrJPwtzwiwTm_Va7sg"
-      }
+export const getVideos = q => async dispatch => {
+  const res = await axios.get("https://www.googleapis.com/youtube/v3/search", {
+    params: {
+      key: "AIzaSyDXp40a7hHNVrd2kE2yqjE5a1JTUEqjYtU",
+      part: "snippet",
+      maxResults: 24,
+      q: q,
+      type: "video",
+      regionCode: "US"
     }
-  );
+  });
   dispatch({ type: GET_VIDEO_DATA, payload: res.data });
 };
 
