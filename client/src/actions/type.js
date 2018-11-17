@@ -8,3 +8,6 @@ export const GET_PROFILE_DATA = "GET_PROFILE_DATA";
 
 
 export const GET_VIDEO_DATA = "GET_VIDEO_DATA";
+
+export const ADD_HISTORY = "ADD_HISTORY";
+export const REMOVE_HISTORY = "REMOVE_HISTORY";

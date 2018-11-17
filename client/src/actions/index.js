@@ -7,7 +7,9 @@ import {
   GET_PROFILE_DATA,
   GET_ONE_TEAM_DATA,
   GET_VIDEO_DATA,
-  GET_SQUAD_DATA
+  GET_SQUAD_DATA,
+  ADD_HISTORY,
+  REMOVE_HISTORY
 } from "./type";
 
 //! ----------------Functions---------------
@@ -135,3 +137,12 @@ export const getSquadData = id => async dispatch => {
   const res = await axios.get(`/api/get_squad_data/${id}`);
   dispatch({ type: GET_SQUAD_DATA, payload: res.data });
 };
+
+//Add history to store
+export const addHistory = data => async dispatch => {
+  dispatch({ type: ADD_HISTORY, payload: data });
+};
+
+export const removeHistory = () => async dispatch => {
+  dispatch({type: REMOVE_HISTORY});
+}

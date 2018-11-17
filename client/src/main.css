@@ -95,6 +95,11 @@
   color: #fff !important;
   background-color: #f00; }
 
+.now-playing {
+  width: 136.6rem;
+  height: 76.8rem;
+  margin: 5rem; }
+
 @keyframes arrowMove {
   0% {
     opacity: 0;

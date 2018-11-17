@@ -2,11 +2,12 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import AuthNavbar from "../AuthNavbar";
-import { getOneTeamData } from "../../actions";
+import { getOneTeamData, addHistory, removeHistory } from "../../actions";
 import { css } from "react-emotion";
 
 import { HashLoader } from "react-spinners";
 import _ from "lodash";
+import HistoryBar from "../HistoryBar";
 
 const override = css`
   display: block;
@@ -21,6 +22,11 @@ class TeamDetail extends React.Component {
     };
   }
   async componentDidMount() {
+    if (this.props.history.action === "PUSH") {
+      await this.props.addHistory(this.props.match.url);
+    } else {
+      await this.props.removeHistory();
+    }
     await this.props.getOneTeamData(this.props.match.params.teamid);
     console.log(this.props);
     this.setState({ loading: false });
@@ -81,6 +87,7 @@ class TeamDetail extends React.Component {
     return (
       <div>
         <AuthNavbar />
+        <HistoryBar />
         <div className="sweet-loading">
           <HashLoader
             className={override}
@@ -108,5 +115,5 @@ function mapStateToProps({ teamDetail }) {
 
 export default connect(
   mapStateToProps,
-  { getOneTeamData }
+  { getOneTeamData, addHistory, removeHistory }
 )(TeamDetail);

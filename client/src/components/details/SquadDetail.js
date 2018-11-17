@@ -1,13 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
 import AuthNavbar from "../AuthNavbar";
-import { getSquadData } from "../../actions";
+import { getSquadData, addHistory, removeHistory } from "../../actions";
+import HistoryBar from "../HistoryBar";
 
 class SquadDetail extends React.Component {
   constructor(props) {
     super(props);
   }
   async componentDidMount() {
+    if (this.props.history.action === "PUSH") {
+      await this.props.addHistory(this.props.match.url);
+    } else {
+      await this.props.removeHistory();
+    }
     await this.props.getSquadData(this.props.match.params.squadid);
     console.log(this.props);
   }
@@ -15,7 +21,7 @@ class SquadDetail extends React.Component {
     if (this.props.squad) {
       return (
         <div>
-            <h1 className="heading">{this.props.squad.name}</h1>
+          <h1 className="heading">{this.props.squad.name}</h1>
 
           <div className="card">
             <div className="card__container flex--dn">
@@ -34,6 +40,7 @@ class SquadDetail extends React.Component {
     return (
       <div>
         <AuthNavbar />
+        <HistoryBar />
         <div className="container">
           <div className="row">{this.renderContent()}</div>
         </div>
@@ -48,5 +55,5 @@ function mapStateToProps({ squad }) {
 
 export default connect(
   mapStateToProps,
-  { getSquadData }
+  { getSquadData, addHistory, removeHistory }
 )(SquadDetail);

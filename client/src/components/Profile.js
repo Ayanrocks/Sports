@@ -8,7 +8,10 @@ import { getProfileData } from "../actions";
 
 const override = css`
   display: block;
-  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 class Profile extends React.Component {

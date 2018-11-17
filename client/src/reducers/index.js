@@ -6,6 +6,7 @@ import getProfileData from "./getProfileData";
 import getTeamDetail from "./getTeamDetail";
 import getVideos from "./getVideos";
 import getSquadData from "./getSquadData";
+import addHistory from "./addHistory";
 
 export default combineReducers({
   league: getLeagueData,
@@ -15,4 +16,5 @@ export default combineReducers({
   teamDetail: getTeamDetail,
   videos: getVideos,
   squad: getSquadData,
+  path: addHistory
 });

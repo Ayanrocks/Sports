@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import AuthNavbar from "./AuthNavbar";
 import LeagueCard from "./LeagueCard";
-import { getCompetitionData } from "../actions";
+import { getCompetitionData, addHistory, removeHistory } from "../actions";
 import _ from "lodash";
 import { css } from "react-emotion";
 import { HashLoader } from "react-spinners";
+import HistoryBar from "./HistoryBar";
 
 const override = css`
   display: block;
@@ -25,6 +26,11 @@ class Search extends React.Component {
   }
 
   async componentDidMount() {
+    if (this.props.history.action === "PUSH") {
+      await this.props.addHistory(this.props.match.url);
+    } else {
+      await this.props.removeHistory();
+    }
     await this.props.getCompetitionData();
     this.setState({ loading: false });
   }
@@ -59,6 +65,7 @@ class Search extends React.Component {
         </div>
 
         <AuthNavbar />
+        <HistoryBar />
         <div className="container">
           <div className="row">
             <div className="league__heading__container">
@@ -82,5 +89,5 @@ function mapStateToProps({ competition }) {
 
 export default connect(
   mapStateToProps,
-  { getCompetitionData }
+  { getCompetitionData, addHistory, removeHistory }
 )(Search);

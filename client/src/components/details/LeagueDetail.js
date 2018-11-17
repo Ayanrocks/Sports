@@ -5,8 +5,15 @@ import { connect } from "react-redux";
 import { HashLoader } from "react-spinners";
 import _ from "lodash";
 
-import { getLeagueData, getTeamData, getStandingsData } from "../../actions";
+import {
+  getLeagueData,
+  getTeamData,
+  getStandingsData,
+  addHistory,
+  removeHistory
+} from "../../actions";
 import AuthNavbar from "../AuthNavbar";
+import HistoryBar from "../HistoryBar";
 
 const override = css`
   display: block;
@@ -23,6 +30,11 @@ class LeagueDetail extends React.Component {
   }
   async componentDidMount() {
     if (this.props) {
+      if (this.props.history.action === "PUSH") {
+        await this.props.addHistory(this.props.match.url);
+      } else {
+        await this.props.removeHistory();
+      }
       await this.props.getLeagueData(this.props.match.params.id);
       await this.props.getTeamData(this.props.match.params.id);
       await this.props.getStandingsData(this.props.league.league.id);
@@ -134,6 +146,7 @@ class LeagueDetail extends React.Component {
     return (
       <div className="leagueDetail">
         <AuthNavbar />
+        <HistoryBar />
         <div className="sweet-loading">
           <HashLoader
             className={override}
@@ -161,5 +174,5 @@ function mapStateToProps({ league, teams }) {
 
 export default connect(
   mapStateToProps,
-  { getLeagueData, getTeamData, getStandingsData }
+  { getLeagueData, getTeamData, getStandingsData, addHistory, removeHistory }
 )(LeagueDetail);
