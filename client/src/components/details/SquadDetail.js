@@ -5,9 +5,6 @@ import { getSquadData, addHistory, removeHistory } from "../../actions";
 import HistoryBar from "../HistoryBar";
 
 class SquadDetail extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   async componentDidMount() {
     if (this.props.history.action === "PUSH") {
       await this.props.addHistory(this.props.match.url);

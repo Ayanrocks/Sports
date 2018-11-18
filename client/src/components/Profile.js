@@ -51,15 +51,15 @@ class Profile extends React.Component {
               <a href="/logout">Logout</a>
             </div>
             <div className="profile__buttons--delete">
-              <a
-                href=""
+              <button
+                
                 onClick={e => {
                   e.preventDefault();
                   this.setState({ modal: true });
                 }}
               >
                 Delete Account
-              </a>
+              </button>
             </div>
           </div>
         </div>

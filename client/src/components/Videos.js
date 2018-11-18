@@ -54,6 +54,7 @@ class Videos extends React.Component {
               allow="autoplay; encrypted-media"
               allowFullScreen
               key={val.etag}
+              title={val.name}
               className={
                 this.state.playing === val.id.videoId
                   ? "margin--sm now-playing"

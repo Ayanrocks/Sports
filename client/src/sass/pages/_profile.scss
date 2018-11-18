@@ -43,6 +43,7 @@
         flex-wrap: wrap;
         &--logout {
             cursor: pointer;
+            margin: 2rem 0;
 
             a {
                 font-size: 2.2rem;
@@ -63,7 +64,7 @@
         &--delete {
             cursor: pointer;
 
-            a {
+            button {
                 font-size: 2.2rem;
                 padding: 2rem 4rem;
                 border: none;
