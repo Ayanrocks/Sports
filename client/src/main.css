@@ -303,6 +303,14 @@ nav {
     top: 10%;
     left: 95%; }
 
+.historyBar__content {
+  font-size: 1.5rem;
+  margin-top: 2rem; }
+
+.historyBar__link {
+  color: #000000;
+  margin: 3rem; }
+
 .google-signup {
   position: absolute;
   top: 50%;

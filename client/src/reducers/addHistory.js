@@ -1,7 +1,7 @@
 import { ADD_HISTORY, REMOVE_HISTORY } from "../actions/type";
 
 const initialState = {
-  path: ["/"]
+  path: [{ url: "/", name: "Dashboard" }]
 };
 
 export default (state = initialState, action) => {
@@ -15,8 +15,7 @@ export default (state = initialState, action) => {
       console.log(state.path);
       return {
         ...state,
-        path: [...state.path].splice(state.path.length - 1, 1)
-
+        path: [...state.path].slice(0, -1)
       };
     default:
       return state;

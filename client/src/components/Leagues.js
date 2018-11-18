@@ -26,12 +26,13 @@ class Search extends React.Component {
   }
 
   async componentDidMount() {
+    await this.props.getCompetitionData();
     if (this.props.history.action === "PUSH") {
-      await this.props.addHistory(this.props.match.url);
+      const url = this.props.match.url;
+      await this.props.addHistory({ "url": url, "name": "Leagues" });
     } else {
       await this.props.removeHistory();
     }
-    await this.props.getCompetitionData();
     this.setState({ loading: false });
   }
   renderContent() {

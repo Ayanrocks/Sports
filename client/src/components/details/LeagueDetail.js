@@ -30,14 +30,16 @@ class LeagueDetail extends React.Component {
   }
   async componentDidMount() {
     if (this.props) {
-      if (this.props.history.action === "PUSH") {
-        await this.props.addHistory(this.props.match.url);
-      } else {
-        await this.props.removeHistory();
-      }
       await this.props.getLeagueData(this.props.match.params.id);
       await this.props.getTeamData(this.props.match.params.id);
       await this.props.getStandingsData(this.props.league.league.id);
+      if (this.props.history.action === "PUSH") {
+        const url = this.props.match.url;
+        const name = this.props.league.league.name;
+        await this.props.addHistory({ "url": url, "name": name });
+      } else {
+        await this.props.removeHistory();
+      }
       this.setState({ loading: false });
     }
     console.log(this.props);

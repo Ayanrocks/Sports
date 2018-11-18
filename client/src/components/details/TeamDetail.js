@@ -22,12 +22,14 @@ class TeamDetail extends React.Component {
     };
   }
   async componentDidMount() {
+    await this.props.getOneTeamData(this.props.match.params.teamid);
     if (this.props.history.action === "PUSH") {
-      await this.props.addHistory(this.props.match.url);
+      const url = this.props.match.url;
+      const name = this.props.teamDetail.name;
+      await this.props.addHistory({ "url": url, "name": name });
     } else {
       await this.props.removeHistory();
     }
-    await this.props.getOneTeamData(this.props.match.params.teamid);
     console.log(this.props);
     this.setState({ loading: false });
   }

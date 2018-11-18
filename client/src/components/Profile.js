@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import AuthNavbar from "./AuthNavbar";
 import { css } from "react-emotion";
 import { HashLoader } from "react-spinners";
-
-import { getProfileData } from "../actions";
+import HistoryBar from "./HistoryBar";
+import { getProfileData, addHistory, removeHistory } from "../actions";
 
 const override = css`
   display: block;
@@ -24,6 +24,12 @@ class Profile extends React.Component {
   }
   async componentDidMount() {
     await this.props.getProfileData();
+    if (this.props.history.action === "PUSH") {
+      const url = this.props.match.url;
+      await this.props.addHistory({ url: url, name: "Leagues" });
+    } else {
+      await this.props.removeHistory();
+    }
     console.log(this.props);
     this.setState(() => {
       return {
@@ -52,7 +58,6 @@ class Profile extends React.Component {
             </div>
             <div className="profile__buttons--delete">
               <button
-                
                 onClick={e => {
                   e.preventDefault();
                   this.setState({ modal: true });
@@ -70,6 +75,7 @@ class Profile extends React.Component {
     return (
       <section className="profile">
         <AuthNavbar />
+        <HistoryBar />
         <div className="loader">
           <div className="sweet-loading">
             <HashLoader
@@ -147,5 +153,5 @@ function mapStateToProps({ profile }) {
 
 export default connect(
   mapStateToProps,
-  { getProfileData }
+  { getProfileData, addHistory, removeHistory }
 )(Profile);

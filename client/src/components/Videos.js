@@ -1,8 +1,9 @@
 import React from "react";
 import AuthNavbar from "./AuthNavbar";
-import { getVideos } from "../actions";
+import { getVideos, addHistory, removeHistory } from "../actions";
 import { connect } from "react-redux";
 import _ from "lodash";
+import HistoryBar from "./HistoryBar";
 
 class Videos extends React.Component {
   constructor(props) {
@@ -17,6 +18,12 @@ class Videos extends React.Component {
   }
   async componentDidMount() {
     await this.props.getVideos("football liga");
+    if (this.props.history.action === "PUSH") {
+      const url = this.props.match.url;
+      await this.props.addHistory({ url: url, name: "Videos" });
+    } else {
+      await this.props.removeHistory();
+    }
     console.log(this.props);
   }
 
@@ -74,6 +81,7 @@ class Videos extends React.Component {
     return (
       <div>
         <AuthNavbar />
+        <HistoryBar />
         <div className="container">
           <div className="row">
             <div className="videos">
@@ -209,5 +217,5 @@ function mapStateToProps({ videos }) {
 
 export default connect(
   mapStateToProps,
-  { getVideos }
+  { getVideos, addHistory, removeHistory }
 )(Videos);
