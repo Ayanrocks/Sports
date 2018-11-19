@@ -1,73 +1,51 @@
 import React from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import AuthNavbar from "./AuthNavbar";
-import MatchCard from "./MatchCard";
-import _ from "lodash";
-import { getLeagueData, getFixtureData, getCurrentData } from "../actions";
+// // import MatchCard from "./MatchCard";
+// // import _ from "lodash";
+// import { getLeagueData, getFixtureData, getCurrentData } from "../actions";
 
 class Dashboard extends React.Component {
-  async componentDidMount() {
-    await this.props.getLeagueData();
+  // async componentDidMount() {
+  //   await this.props.getLeagueData();
 
-    await this.props.getFixtureData();
+  //   await this.props.getFixtureData();
 
-    await this.props.getCurrentData();
+  //   await this.props.getCurrentData();
 
-
-    // console.log(this.props);
-  }
-
-  renderContent() {
-    if (_.isEmpty(this.props.current)) {
-      if (this.props.league.league) {
-        return (
-          <MatchCard 
-            match="France won the world cup"
-            // title=" No current Match"
-            details={{}}
-            leagueCaption={this.props.league.league.leagueCaption}
-          />
-        );
-      }
-    } else {
-      return (
-        <MatchCard
-          match="Current Match"
-          details={this.props.current.current}
-          leagueCaption={this.props.league.league.leagueCaption}
-        />
-      );
-    }
-  }
+  //   // console.log(this.props);
+  // }
 
   render() {
     return (
       <section className="dashboard">
         <AuthNavbar />
-        <div className="dashboard__content">
-          {/* To render Current matchCard */}
-          {this.renderContent()}
-
-          {/* { this.props.league.league && <MatchCard
-            match="Upcoming Match"
-            details={this.props.fixture.fixture}
-            leagueCaption={this.props.league.league.leagueCaption}
-          />} */}
+        <div className="container">
+          <div className="row">
+            <div className="card">
+              <div className="card__container pos-rel">
+                <div className="triangle--red" />
+                <h1 className="card__heading">Dashboard Coming Soon</h1>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     );
   }
 }
 
-function mapStateToProps({ league, fixture, current }) {
-  return {
-    league,
-    fixture,
-    current
-  };
-}
+// function mapStateToProps({ league, fixture, current }) {
+//   return {
+//     league,
+//     fixture,
+//     current
+//   };
+// }
 
-export default connect(
-  mapStateToProps,
-  { getLeagueData, getFixtureData, getCurrentData }
-)(Dashboard);
+// export default connect(
+//   mapStateToProps,
+//   { getLeagueData, getFixtureData, getCurrentData }
+// )(Dashboard);
+
+export default Dashboard;

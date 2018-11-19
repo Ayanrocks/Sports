@@ -24,12 +24,10 @@ class Videos extends React.Component {
     } else {
       await this.props.removeHistory();
     }
-    console.log(this.props);
   }
 
   async selectOption(name) {
     const value = name;
-    console.log(value);
     this.setState(() => ({
       ...this.state,
       active: value
@@ -68,7 +66,6 @@ class Videos extends React.Component {
                   : "margin--sm"
               }
               onClick={val => {
-                console.log(val.id);
                 this.setState({ playing: val.id.videoId });
               }}
             />

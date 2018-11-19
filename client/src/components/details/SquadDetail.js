@@ -14,7 +14,6 @@ class SquadDetail extends React.Component {
     } else {
       await this.props.removeHistory();
     }
-    console.log(this.props);
   }
   renderContent() {
     if (this.props.squad) {

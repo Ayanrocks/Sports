@@ -80,7 +80,6 @@ class Contact extends React.Component {
           message: this.state.message
         })
         .then(res => {
-          console.log(res);
           this.setState({
             error: true,
             errorMessage: "Form Sent Successfully",

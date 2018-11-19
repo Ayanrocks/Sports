@@ -30,7 +30,6 @@ class TeamDetail extends React.Component {
     } else {
       await this.props.removeHistory();
     }
-    console.log(this.props);
     this.setState({ loading: false });
   }
   renderSquads() {

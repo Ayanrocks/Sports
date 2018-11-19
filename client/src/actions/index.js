@@ -9,7 +9,8 @@ import {
   GET_VIDEO_DATA,
   GET_SQUAD_DATA,
   ADD_HISTORY,
-  REMOVE_HISTORY
+  REMOVE_HISTORY,
+  IS_LOGGED_IN
 } from "./type";
 
 //! ----------------Functions---------------
@@ -144,5 +145,15 @@ export const addHistory = data => async dispatch => {
 };
 
 export const removeHistory = () => async dispatch => {
-  dispatch({type: REMOVE_HISTORY});
-}
+  dispatch({ type: REMOVE_HISTORY });
+};
+
+export const getLoginData = () => async dispatch => {
+  const res = await axios.get("/profile/data");
+
+  if (res.data !== "") {
+    dispatch({ type: IS_LOGGED_IN, payload: true });
+  } else {
+    dispatch({ type: IS_LOGGED_IN, payload: false });
+  }
+};

@@ -30,7 +30,6 @@ class Profile extends React.Component {
     } else {
       await this.props.removeHistory();
     }
-    console.log(this.props);
     this.setState(() => {
       return {
         ...this.state,

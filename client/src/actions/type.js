@@ -11,3 +11,5 @@ export const GET_VIDEO_DATA = "GET_VIDEO_DATA";
 
 export const ADD_HISTORY = "ADD_HISTORY";
 export const REMOVE_HISTORY = "REMOVE_HISTORY";
+
+export const IS_LOGGED_IN = "IS_LOGGED_IN";

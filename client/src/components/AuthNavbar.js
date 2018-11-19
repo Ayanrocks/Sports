@@ -21,7 +21,7 @@ class AuthNavbar extends React.Component {
   render() {
     return (
       <nav className="auth-navbar">
-        <Link to="/" className="logo">
+        <Link to="/dashboard" className="logo">
           <img src={Logo} alt="logo" title="Sports By Orilliance" />
         </Link>
         <div className="nav__link">
@@ -29,17 +29,20 @@ class AuthNavbar extends React.Component {
             Dashboard
           </NavLink>
           <NavLink
-            to="/search"
+            to="/explore"
             // onClick={this.activeTab}
 
             className="nav-item"
           >
             Explore
           </NavLink>
-          <NavLink to="/myteams" className="nav-item">
+
+          {/* //Coming SOON */}
+          {/* <NavLink to="/myteams" className="nav-item">
             My Teams
-          </NavLink>
-          <NavLink to="/news" className="nav-item">
+          </NavLink> */}
+
+          <NavLink to="/videos" className="nav-item">
             Videos
           </NavLink>
           <NavLink to="/profile" className="nav-item">

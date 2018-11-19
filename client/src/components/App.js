@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { Online, Offline } from "react-detect-offline";
+import Protected from "./Protected";
 
 //Custom components
 import Home from "./Home";
@@ -8,15 +9,15 @@ import Contact from "./Contact";
 import Auth from "./Auth";
 import Dashboard from "./Dashboard";
 import Leagues from "./Leagues";
-import MyTeams from "./MyTeams";
+// import MyTeams from "./MyTeams";
 import Videos from "./Videos";
 import Profile from "./Profile";
+import NotFound from "./NotFound";
 
 // Detaiils
 import LeagueDetail from "./details/LeagueDetail";
 import TeamDetail from "./details/TeamDetail.js";
-import SquadDetail from './details/SquadDetail';
-
+import SquadDetail from "./details/SquadDetail";
 
 export default class App extends React.Component {
   render() {
@@ -24,20 +25,29 @@ export default class App extends React.Component {
         <Online>
           <BrowserRouter>
             <Switch>
-              <Route path="/" component={Home} exact />
-              <Route path="/contact" component={Contact} />
+              <Route path="/" exact component={Home} />
+              <Route path="/contact" component={Contact} exact />
               <Route path="/faq" component={Home} exact />
 
-              <Route path="/auth" component={Auth} />
-              <Route path="/dashboard" component={Dashboard} />
-              <Route path="/search" component={Leagues} />
-              <Route path="/myteams" component={MyTeams} />
-              <Route path="/news" component={Videos} />
-              <Route path="/profile" component={Profile} />
+              <Route path="/auth" component={Auth} exact />
+              <Protected path="/dashboard" exact component={Dashboard} />
+              <Protected path="/explore" component={Leagues} exact />
 
-              <Route path="/league/:id" component={LeagueDetail} />
-              <Route path="/team/:teamid" component={TeamDetail} />
-              <Route path="/squad/:squadid" component={SquadDetail} />
+              {/* //Coming Soon  */}
+              {/* <Route
+                path="/myteams"
+                render={() => (this.state.isLoggedIn ? <MyTeams /> : <Redirect to="/" />)}
+                exact
+              /> */}
+
+              <Protected path="/videos" component={Videos} exact />
+              <Protected path="/profile" component={Profile} exact />
+
+              <Protected path="/league/:id/" component={LeagueDetail} exact />
+              <Protected path="/team/:teamid/" component={TeamDetail} exact />
+              <Protected path="/squad/:squadid/" component={SquadDetail} exact />
+
+              <Route component={NotFound} />
             </Switch>
           </BrowserRouter>
         </Online>
