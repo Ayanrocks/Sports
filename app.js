@@ -28,10 +28,6 @@ app.use(passport.session());
 
 app.use(express.static(__dirname + "/client/build"));
 
-app.get("/", (req, res) => {
-  res.render(index.html);
-});
-
 require("./routes/authRoutes")(app);
 require("./routes/apiRoutes")(app);
 require("./routes/additionalRoutes")(app);
