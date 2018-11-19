@@ -6,6 +6,7 @@
   "author": "Ayan",
   "license": "MIT",
   "scripts": {
+    "start": "node app.js",
     "build": "webpack --watch",
     "serve": "concurrently \"nodemon app.js\" \"npm start --prefix client\" \" npm run watch-css --prefix client \""
   },
