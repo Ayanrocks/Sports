@@ -73,7 +73,7 @@ export const getLeagueData = id => async dispatch => {
 
 export const getFixtureData = () => async dispatch => {
   // const res = await axios.get("/api/get_fixture_data");
-  // // console.log(res.data);
+  //// console.log(res.data);
   // const filteredData = filterArrayTimed(res.data);
   // const finalData = await getData(filteredData);
   // dispatch({ type: GET_FIXTURE_DATA, payload: finalData });
@@ -123,7 +123,7 @@ export const getOneTeamData = id => async dispatch => {
 export const getVideos = q => async dispatch => {
   const res = await axios.get("https://www.googleapis.com/youtube/v3/search", {
     params: {
-      key: "AIzaSyDXp40a7hHNVrd2kE2yqjE5a1JTUEqjYtU",
+      key: "AIzaSyCfjXc6ZtlMBwyvIERSBqHV02ESy9J_ltc",
       part: "snippet",
       maxResults: 24,
       q: q,

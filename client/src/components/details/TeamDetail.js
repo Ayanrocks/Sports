@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import AuthNavbar from "../AuthNavbar";
 import { getOneTeamData, addHistory, removeHistory } from "../../actions";
-import { css } from "react-emotion";
+import { css } from "emotion";
 
 import { HashLoader } from "react-spinners";
 import _ from "lodash";

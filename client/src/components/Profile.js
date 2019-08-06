@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import AuthNavbar from "./AuthNavbar";
-import { css } from "react-emotion";
+import { css } from "emotion";
 import { HashLoader } from "react-spinners";
 import HistoryBar from "./HistoryBar";
 import { getProfileData, addHistory, removeHistory } from "../actions";

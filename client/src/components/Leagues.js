@@ -5,7 +5,7 @@ import AuthNavbar from "./AuthNavbar";
 import LeagueCard from "./LeagueCard";
 import { getCompetitionData, addHistory, removeHistory } from "../actions";
 import _ from "lodash";
-import { css } from "react-emotion";
+import { css } from "emotion";
 import { HashLoader } from "react-spinners";
 import HistoryBar from "./HistoryBar";
 
