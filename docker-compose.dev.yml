@@ -1,0 +1,21 @@
+version: "3.6"
+
+services: 
+  # WEB APP
+  web:
+    build: .
+    ports: 
+      - "5000:5000"
+    environment: 
+      GOOGLE_CLIENT_ID: 46752517836-tqgnt9jsrln8q3b71u9pdroie63ospkh.apps.googleusercontent.com
+      GOOGLE_CLIENT_SECRET: 3JVMSwERhjbRgADtQdaizHD4
+      FACEBOOK_APP_ID: 2240353912909390
+      FACEBOOK_CLIENT_SECRET: e0e7293dae5c31c7b3ef091e9b177fd7
+      MONGO_URI: mongodb://ayanrocks5:allghilledup@$$2203@ds157503.mlab.com:57503/sports-prod
+      COOKIE_KEY: reat34g4434gbv342igiyu3giyub3fudg
+      FOOTBALL_API_KEY: bd408b1263664b9babe9a55c021090a5
+      YOUTUBE_API_KEY: AIzaSyCfjXc6ZtlMBwyvIERSBqHV02ESy9J_ltc
+      NODE_ENV: production
+    
+      # volumes: 
+      #   -./:/usr/src/app
